@@ -98,6 +98,7 @@ Leg leg[4];
 int main(){
     
     defineServo();
+    defaultPos();
     while (true)
     {
         walk();
@@ -124,32 +125,32 @@ int main(){
 }*/
 void defineServo(){
   int i,j;
-    leg[0].servo[0].servoPin=20;    leg[0].servo[0].range[0]=400;  leg[0].servo[0].range[1]=2400; 
-    leg[0].servo[1].servoPin=19;    leg[0].servo[1].range[0]=400;   leg[0].servo[1].range[1]=2400;
-    leg[0].servo[2].servoPin=18;    leg[0].servo[2].range[0]=400;   leg[0].servo[2].range[1]=2400;
+    leg[0].servo[0].servoPin=20;    leg[0].servo[0].range[0]=550;  leg[0].servo[0].range[1]=2400;    //Between 0-160 degree
+    leg[0].servo[1].servoPin=19;    leg[0].servo[1].range[0]=550;   leg[0].servo[1].range[1]=2400;
+    leg[0].servo[2].servoPin=18;    leg[0].servo[2].range[0]=550;   leg[0].servo[2].range[1]=2400;
 
-    leg[1].servo[0].servoPin=9;     leg[1].servo[0].range[0]=2400;  leg[1].servo[0].range[1]=400;
-    leg[1].servo[1].servoPin=10;    leg[1].servo[1].range[0]=2400;  leg[1].servo[1].range[1]=400;
-    leg[1].servo[2].servoPin=11;    leg[1].servo[2].range[0]=2400;  leg[1].servo[2].range[1]=400;
+    leg[1].servo[0].servoPin=9;     leg[1].servo[0].range[0]=2400;  leg[1].servo[0].range[1]=550;
+    leg[1].servo[1].servoPin=10;    leg[1].servo[1].range[0]=2400;  leg[1].servo[1].range[1]=550;
+    leg[1].servo[2].servoPin=11;    leg[1].servo[2].range[0]=2400;  leg[1].servo[2].range[1]=550;    //Between 0-180
 
-    leg[2].servo[0].servoPin=28;    leg[2].servo[0].range[0]=2400;  leg[2].servo[0].range[1]=400;
-    leg[2].servo[1].servoPin=22;    leg[2].servo[1].range[0]=2400;  leg[2].servo[1].range[1]=400;
-    leg[2].servo[2].servoPin=21;    leg[2].servo[2].range[0]=2400;  leg[2].servo[2].range[1]=400;
+    leg[2].servo[0].servoPin=28;    leg[2].servo[0].range[0]=2400;  leg[2].servo[0].range[1]=550;    //0-180
+    leg[2].servo[1].servoPin=22;    leg[2].servo[1].range[0]=2400;  leg[2].servo[1].range[1]=550;    //0-170
+    leg[2].servo[2].servoPin=21;    leg[2].servo[2].range[0]=2400;  leg[2].servo[2].range[1]=550;    //0-160
 
-    leg[3].servo[0].servoPin=0;     leg[3].servo[0].range[0]=400;   leg[3].servo[0].range[1]=2400;
-    leg[3].servo[1].servoPin=1;     leg[3].servo[1].range[0]=400;   leg[3].servo[1].range[1]=2400;
-    leg[3].servo[2].servoPin=8;     leg[3].servo[2].range[0]=400;   leg[3].servo[2].range[1]=2400;
+    leg[3].servo[0].servoPin=0;     leg[3].servo[0].range[0]=550;   leg[3].servo[0].range[1]=2400;   //0-160
+    leg[3].servo[1].servoPin=1;     leg[3].servo[1].range[0]=550;   leg[3].servo[1].range[1]=2400;  //0-160
+    leg[3].servo[2].servoPin=8;     leg[3].servo[2].range[0]=550;   leg[3].servo[2].range[1]=2400;  //0-160
     for(i=0; i<4 ; i++)
       for(j=0 ; j<3 ; j++)
         leg[i].servo[j].init();
 }
 void defaultPos() {                                                 //Default leg positions
   for(int i=0; i<4 ; i++){
-    leg[i].toPos(40,40,60);
+    leg[i].toPos(60,60,60);
   }
 }
 void walk() {                                                       //Manuel Walking gait
-  int vel =1000;
+  int vel =500;
   leg[3].toPos(40, 20, 40);
   sleep_ms(vel);
   leg[3].toPos(40, 20, 60);
@@ -170,6 +171,10 @@ void walk() {                                                       //Manuel Wal
   leg[0].toPos(40, 120, 0);
   sleep_ms(vel);
   leg[0].toPos(40, 120, 60);
+  sleep_ms(vel);
+  leg[3].toPos(40, 20, 40);
+  sleep_ms(vel);
+  leg[3].toPos(40, 20, 60);
   sleep_ms(vel);
   leg[0].toPos(40, 70, 60);
   leg[1].toPos(40, 20, 60);
