@@ -1048,6 +1048,33 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
 	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj
+
+# target to build an object file
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj:
+	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.i
+
+# target to preprocess a source file
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i:
+	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.s
+
+# target to generate assembly for a file
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s:
+	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj
@@ -1705,33 +1732,6 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
 	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
-home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-
-.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
-
-# target to build an object file
-home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-
-home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-
-.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
-
-# target to preprocess a source file
-home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-
-home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-
-.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
-
-# target to generate assembly for a file
-home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj
@@ -1977,6 +1977,9 @@ help:
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
+	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj"
+	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.i"
+	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.s"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s"
@@ -2050,9 +2053,6 @@ help:
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
-	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj"
-	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
-	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s"

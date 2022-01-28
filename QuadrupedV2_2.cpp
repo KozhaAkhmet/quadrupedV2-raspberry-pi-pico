@@ -9,7 +9,9 @@
 #include "pico/stdlib.h"
 #include <iostream>
 #include "hardware/pwm.h"
+#include "pico/binary_info.h"
 #include "hardware/clocks.h"
+#include "hardware/i2c.h"
 #include <math.h>
 
 #define PI 3.14
@@ -22,7 +24,34 @@ void defineServo();
 void walk();
 void defaultPos() ;
 void test();
-void test2();
+void bodyCircularMotion();
+
+static int addr = 0x68;
+
+static void mpu6050_reset() {
+uint8_t buf[] = {0x6B, 0x00};
+i2c_write_blocking(i2c_default, addr, buf, 2, false);
+}
+static void mpu6050_read_raw(int16_t accel[3], int16_t gyro[3], int16_t *temp) {
+uint8_t buffer[6];
+uint8_t val = 0x3B;
+i2c_write_blocking(i2c_default, addr, &val, 1, true); 
+i2c_read_blocking(i2c_default, addr, buffer, 6, false);
+  for (int i = 0; i < 3; i++) {
+    accel[i] = (buffer[i * 2] << 8 | buffer[(i * 2) + 1]);
+  }
+val = 0x43;
+i2c_write_blocking(i2c_default, addr, &val, 1, true);
+i2c_read_blocking(i2c_default, addr, buffer, 6, false);
+  for (int i = 0; i < 3; i++) {
+    gyro[i] = (buffer[i * 2] << 8 | buffer[(i * 2) + 1]);;
+  }
+val = 0x41;
+i2c_write_blocking(i2c_default, addr, &val, 1, true);
+i2c_read_blocking(i2c_default, addr, buffer, 2, false);
+
+*temp = buffer[0] << 8 | buffer[1];
+}
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
@@ -66,7 +95,8 @@ class Leg {                                                        //Creating Le
         Servo servo[3];
         void toPos(double posX, double posY, double posZ);
         void toAng(double al, double bet , double gam );
-        void Step (double posX, double posY, double posZ);
+        void step (double posX, double posY, double posZ);
+        void slide(double posX, double posY ,double posZ);
 };
 void Leg::toPos(double posX, double posY, double posZ) {           //Inverse kinematic (Needs Upgrade)
     double al, bet, gam, L, L1 = sqrt(posX * posX + posY * posY);
@@ -90,24 +120,73 @@ void Leg::toAng(double al, double bet , double gam ){
   servo[1].write(map(al,0,180,   servo[1].range[0],  servo[1].range[1]));
   servo[2].write(map(bet,0,180,  servo[2].range[0],  servo[2].range[1]));
 }
-void Leg::Step(double posX, double posY, double posZ){              //Function for steps (On procsess..)
-  /*double R=sqrt((posX-pos.x)*(posX-pos.x) + (posY-pos.y)*(posY-pos.y) + (posZ-pos.z)*(posZ-pos.z))/2;
-  double tmpx=pos.x,tmpy=pos.y,tmpz=pos.z, sinus;
- 0/* while(!(pos.x + R*cos(millis()/500) == posX)){
-  sinus= sin(millis()/500) > 0 ? sin(millis()/500) : 0 ;
-  toPos(tmpx + R - R*cos(millis()/500), tmpy, tmpz + R*sinus);
-  }*/
+void Leg::step(double posX, double posY, double posZ){              //Function for steps (On procsess..)
+  double R=sqrt((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
+  double tmpx=lastPos.x,tmpy=lastPos.y,tmpz=lastPos.z, sinus;
+  absolute_time_t time = get_absolute_time();
+  //while(!(lastPos.x + R*cos(millis()/500) == posX)){
+  for(double j = 2*PI ; j > 0 ; j = j - 0.5){
+    sinus= sin(j) < 0 ? sin(j) : 0 ;
+    //tmpx + R - R*cos(j)
+    //get_absolute_time()
+    //
+    toPos(tmpx+ R - R*cos(j), tmpy, tmpz + R*sinus);
+    sleep_ms(100);
+  }
+}
+void Leg::slide(double posX, double posY ,double posZ){
+  for( double flag = 0; flag <= 2*PI ; flag = flag + PI/4){
+  toPos(40,40,60);
+  double R=sqrt((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
+  double tmpx = lastPos.x , tmpy =  posY, tmpz = lastPos.z, x,y,z;
+  //absolute_time_t time = get_absolute_time();
+  //while(!(lastPos.x + R*cos(millis()/500) == posX)){
+  for(double j = PI ; j > -PI ; j = j - 0.5){
+    //tmpx + R - R*cos(j)
+    //get_absolute_time()
+    //
+    x =- R*cos(j);
+    y = 0;
+    toPos( tmpx + x*cos(flag) - y*sin(flag),  tmpy + x*sin(flag) + y*cos(flag),   tmpz);
+    sleep_ms(100);
+  }
+  sleep_ms(1000);
+  }
 }
 Leg leg[4];
+
 int main(){                                                         //Main Function
-    
-    defineServo();
-    defaultPos();
-    while (true)
-    {
-        //walk();
-        test2();
-    }
+  /*stdio_init_all();
+  printf("Hello, MPU6050! Reading raw data from registers...\n");
+
+  i2c_init(i2c_default, 400 * 1000);
+  gpio_set_function(15, GPIO_FUNC_I2C);
+  gpio_set_function(14, GPIO_FUNC_I2C);
+  gpio_pull_up(15);
+  gpio_pull_up(14);
+
+  bi_decl(bi_2pins_with_func(15, 14,GPIO_FUNC_I2C));
+  mpu6050_reset();
+
+  int16_t acceleration[3], gyro[3], temp;
+
+  while (0) {
+    mpu6050_read_raw(acceleration, gyro, &temp);
+    printf("Acc. X = %d, Y = %d, Z = %d\n", acceleration[0], acceleration[1],acceleration[2]);
+    printf("Gyro. X = %d, Y = %d, Z = %d\n", gyro[0], gyro[1], gyro[2]);
+    printf("Temp. = %f\n", (temp / 340.0) + 36.53);
+    mpu6050_reset();
+    sleep_ms(100);
+  }*/
+
+  defineServo();
+  defaultPos();
+  while (true)
+  {
+      //walk();
+      //test2();
+      leg[1].slide(80,40,60);
+  }
 }
 void defineServo(){
   int i,j;
@@ -120,7 +199,7 @@ void defineServo(){
     leg[1].servo[2].servoPin=11;    leg[1].servo[2].range[0]=2400;  leg[1].servo[2].range[1]=550;    //Between 0-180
 
     leg[2].servo[0].servoPin=28;    leg[2].servo[0].range[0]=2400;  leg[2].servo[0].range[1]=550;    //0-180
-    leg[2].servo[1].servoPin=22;    leg[2].servo[1].range[0]=2400;  leg[2].servo[1].range[1]=550;    //0-170
+    leg[2].servo[1].servoPin=22;    leg[2].servo[1].range[0]=2400;  leg[2].servo[1].range[1]=550;    //0-160
     leg[2].servo[2].servoPin=21;    leg[2].servo[2].range[0]=2400;  leg[2].servo[2].range[1]=550;    //0-160
 
     leg[3].servo[0].servoPin=0;     leg[3].servo[0].range[0]=550;   leg[3].servo[0].range[1]=2400;   //0-160
@@ -203,7 +282,7 @@ void test(){
     sleep_ms(50);
   }
 }
-void test2(){
+void bodyCircularMotion(){
   for(double j=0 ; j < (2*PI) ; j=j+0.1){
     bodyMove(20*sin(j),20*cos(j),60);
     sleep_ms(50);

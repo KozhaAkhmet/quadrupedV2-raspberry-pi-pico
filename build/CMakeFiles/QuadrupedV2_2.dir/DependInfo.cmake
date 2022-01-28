@@ -22,7 +22,7 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_ASM
-  "CFG_TUSB_DEBUG=0"
+  "CFG_TUSB_DEBUG=1"
   "CFG_TUSB_MCU=OPT_MCU_RP2040"
   "CFG_TUSB_OS=OPT_OS_PICO"
   "LIB_PICO_BIT_OPS=1"
@@ -45,7 +45,6 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "LIB_PICO_RUNTIME=1"
   "LIB_PICO_STANDARD_LINK=1"
   "LIB_PICO_STDIO=1"
-  "LIB_PICO_STDIO_UART=1"
   "LIB_PICO_STDIO_USB=1"
   "LIB_PICO_STDLIB=1"
   "LIB_PICO_SYNC=1"
@@ -58,7 +57,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "LIB_PICO_UTIL=1"
   "PICO_BOARD=\"pico\""
   "PICO_BUILD=1"
-  "PICO_CMAKE_BUILD_TYPE=\"Release\""
+  "PICO_CMAKE_BUILD_TYPE=\"Debug\""
   "PICO_COPY_TO_RAM=0"
   "PICO_CXX_ENABLE_EXCEPTIONS=1"
   "PICO_NO_FLASH=0"
@@ -108,7 +107,6 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/kozha/pico/pico-sdk/src/rp2_common/boot_stage2/include"
   "/home/kozha/pico/pico-sdk/src/common/pico_binary_info/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/include"
-  "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include"
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src"
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src/common"
@@ -118,6 +116,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/include"
   "/home/kozha/pico/pico-sdk/src/common/pico_usb_reset_interface/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include"
+  "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include"
   )
 set(CMAKE_DEPENDS_CHECK_C
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
@@ -151,6 +150,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
+  "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
@@ -171,7 +171,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
-  "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
@@ -182,7 +181,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "CFG_TUSB_DEBUG=0"
+  "CFG_TUSB_DEBUG=1"
   "CFG_TUSB_MCU=OPT_MCU_RP2040"
   "CFG_TUSB_OS=OPT_OS_PICO"
   "LIB_PICO_BIT_OPS=1"
@@ -205,7 +204,6 @@ set(CMAKE_TARGET_DEFINITIONS_C
   "LIB_PICO_RUNTIME=1"
   "LIB_PICO_STANDARD_LINK=1"
   "LIB_PICO_STDIO=1"
-  "LIB_PICO_STDIO_UART=1"
   "LIB_PICO_STDIO_USB=1"
   "LIB_PICO_STDLIB=1"
   "LIB_PICO_SYNC=1"
@@ -218,7 +216,7 @@ set(CMAKE_TARGET_DEFINITIONS_C
   "LIB_PICO_UTIL=1"
   "PICO_BOARD=\"pico\""
   "PICO_BUILD=1"
-  "PICO_CMAKE_BUILD_TYPE=\"Release\""
+  "PICO_CMAKE_BUILD_TYPE=\"Debug\""
   "PICO_COPY_TO_RAM=0"
   "PICO_CXX_ENABLE_EXCEPTIONS=1"
   "PICO_NO_FLASH=0"
@@ -268,7 +266,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/kozha/pico/pico-sdk/src/rp2_common/boot_stage2/include"
   "/home/kozha/pico/pico-sdk/src/common/pico_binary_info/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/include"
-  "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include"
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src"
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src/common"
@@ -278,6 +275,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/include"
   "/home/kozha/pico/pico-sdk/src/common/pico_usb_reset_interface/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include"
+  "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kozha/pico/Projects/QuadrupedV2_2/QuadrupedV2_2.cpp" "/home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/QuadrupedV2_2.dir/QuadrupedV2_2.cpp.obj"
@@ -287,7 +285,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "CFG_TUSB_DEBUG=0"
+  "CFG_TUSB_DEBUG=1"
   "CFG_TUSB_MCU=OPT_MCU_RP2040"
   "CFG_TUSB_OS=OPT_OS_PICO"
   "LIB_PICO_BIT_OPS=1"
@@ -310,7 +308,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "LIB_PICO_RUNTIME=1"
   "LIB_PICO_STANDARD_LINK=1"
   "LIB_PICO_STDIO=1"
-  "LIB_PICO_STDIO_UART=1"
   "LIB_PICO_STDIO_USB=1"
   "LIB_PICO_STDLIB=1"
   "LIB_PICO_SYNC=1"
@@ -323,7 +320,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "LIB_PICO_UTIL=1"
   "PICO_BOARD=\"pico\""
   "PICO_BUILD=1"
-  "PICO_CMAKE_BUILD_TYPE=\"Release\""
+  "PICO_CMAKE_BUILD_TYPE=\"Debug\""
   "PICO_COPY_TO_RAM=0"
   "PICO_CXX_ENABLE_EXCEPTIONS=1"
   "PICO_NO_FLASH=0"
@@ -373,7 +370,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/kozha/pico/pico-sdk/src/rp2_common/boot_stage2/include"
   "/home/kozha/pico/pico-sdk/src/common/pico_binary_info/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/include"
-  "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include"
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src"
   "/home/kozha/pico/pico-sdk/lib/tinyusb/src/common"
@@ -383,6 +379,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/include"
   "/home/kozha/pico/pico-sdk/src/common/pico_usb_reset_interface/include"
   "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include"
+  "/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include"
   )
 
 # Targets to which this target links.

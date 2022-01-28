@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # initalize pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
-set(PICO_SDK_PATH "/home/kozha/pico/pico-sdk")
+set(PICO_SDK_PATH "~/pico/pico-sdk")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -26,12 +26,13 @@ add_executable(QuadrupedV2_2 QuadrupedV2_2.cpp )
 pico_set_program_name(QuadrupedV2_2 "QuadrupedV2_2")
 pico_set_program_version(QuadrupedV2_2 "0.1")
 
-pico_enable_stdio_uart(QuadrupedV2_2 1)
+pico_enable_stdio_uart(QuadrupedV2_2 0)
 pico_enable_stdio_usb(QuadrupedV2_2 1)
 
 # Add the standard library to the build
 target_link_libraries(QuadrupedV2_2 pico_stdlib
 hardware_pwm
+hardware_i2c
 )
 
 pico_add_extra_outputs(QuadrupedV2_2)
