@@ -14,6 +14,8 @@
 #include "hardware/i2c.h"
 #include <math.h>
 
+//#include "Libraries/Servo"
+
 #define PI 3.14
 
 #define claw      83                                          //Defining Leg`s length in mm
@@ -25,6 +27,7 @@ void walk();
 void defaultPos() ;
 void test();
 void bodyCircularMotion();
+void testWalk();
 
 static int addr = 0x68;
 
@@ -95,7 +98,7 @@ class Leg {                                                        //Creating Le
         Servo servo[3];
         void toPos(double posX, double posY, double posZ);
         void toAng(double al, double bet , double gam );
-        void step (double posX, double posY, double posZ);
+        void step (double dis, double omega, double freq);
         void slide(double posX, double posY ,double posZ);
 };
 void Leg::toPos(double posX, double posY, double posZ) {           //Inverse kinematic (Needs Upgrade)
@@ -120,8 +123,8 @@ void Leg::toAng(double al, double bet , double gam ){
   servo[1].write(map(al,0,180,   servo[1].range[0],  servo[1].range[1]));
   servo[2].write(map(bet,0,180,  servo[2].range[0],  servo[2].range[1]));
 }
-void Leg::step(double posX, double posY, double posZ){              //Function for steps (On procsess..)
-  double R=sqrt((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
+void Leg::step(double dis, double omega, double freq){              //Function for steps (On procsess..)
+  /*double R=sqrt((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
   double tmpx=lastPos.x,tmpy=lastPos.y,tmpz=lastPos.z, sinus;
   absolute_time_t time = get_absolute_time();
   //while(!(lastPos.x + R*cos(millis()/500) == posX)){
@@ -130,9 +133,17 @@ void Leg::step(double posX, double posY, double posZ){              //Function f
     //tmpx + R - R*cos(j)
     //get_absolute_time()
     //
-    toPos(tmpx+ R - R*cos(j), tmpy, tmpz + R*sinus);
+    toPos(tmpx+ R - R*cos(j), tmpy, tmpz + (R/1.5)*sinus);
     sleep_ms(100);
-  }
+  }*/
+  double R = dis/2, tmpx = 40, tmpy = 40, tmpz = 60, sinus ,x ,y, z;
+  omega = (omega * PI)/180;
+  //for(double j = freq ; j > freq - 2*PI ; j = j - 0.5){
+    sinus= sin(freq) < 0 ? sin(freq) : 0 ;
+    x = - R*cos(freq); y = 0; z = tmpz + (R*1.5)*sinus;
+    toPos( tmpx + x*cos(omega) - y*sin(omega),  tmpy + x*sin(omega) + y*cos(omega), z);
+    //toPos(tmpx + R - R*cos(j), tmpy, tmpz + (R/1.5)*sinus);
+  //}
 }
 void Leg::slide(double posX, double posY ,double posZ){
   for( double flag = 0; flag <= 2*PI ; flag = flag + PI/4){
@@ -145,7 +156,7 @@ void Leg::slide(double posX, double posY ,double posZ){
     //tmpx + R - R*cos(j)
     //get_absolute_time()
     //
-    x =- R*cos(j);
+    x = - R*cos(j);
     y = 0;
     toPos( tmpx + x*cos(flag) - y*sin(flag),  tmpy + x*sin(flag) + y*cos(flag),   tmpz);
     sleep_ms(100);
@@ -185,7 +196,8 @@ int main(){                                                         //Main Funct
   {
       //walk();
       //test2();
-      leg[1].slide(80,40,60);
+      //leg[1].slide(80,40,60);
+      testWalk();
   }
 }
 void defineServo(){
@@ -286,5 +298,15 @@ void bodyCircularMotion(){
   for(double j=0 ; j < (2*PI) ; j=j+0.1){
     bodyMove(20*sin(j),20*cos(j),60);
     sleep_ms(50);
+  }
+}
+void testWalk(){
+  double angle = 0;
+  for(double  freq ; freq > freq - 2*PI ; freq = freq - 0.5){
+  leg[0].step(70 ,angle ,   freq);
+  leg[1].step(70 ,angle + 180, freq + PI/2);
+  leg[2].step(70 ,angle ,   freq+ PI/2);
+  leg[3].step(70 ,angle + 180, freq );
+  sleep_ms(100);
   }
 }

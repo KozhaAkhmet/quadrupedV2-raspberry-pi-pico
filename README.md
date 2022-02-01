@@ -1,13 +1,38 @@
 # Quadruped Robot On Raspberry pi Pico
+## Hardware
 
-<img src="Pictures/raspberry-pi-pico-pinout-featured-image.jpg" alt= "Pico pinout">
+![Pico pinout](Pictures/raspberry-pi-pico-pinout-featured-image.jpg)
+
+## Software
+Libraries:
+```C
+    #include "pico/stdlib.h"
+    #include <iostream>
+    #include "hardware/pwm.h"
+    #include "pico/binary_info.h"
+    #include "hardware/clocks.h"
+    #include "hardware/i2c.h"
+    #include <math.h>
+```
+
+Data Structure
+
+```c
+    class Leg {       //Creating Leg class and its ingredients
+    public:
+        Ang lastAng;
+        Pos lastPos;
+        Servo servo[3];
+        void toPos(double posX, double posY, double posZ);
+        void toAng(double al, double bet , double gam );
+        void step (double posX, double posY, double posZ);
+        void slide(double posX, double posY ,double posZ);
+    };
+```
 
 
 
 References:
-- [How to connect servos to Raspberry pi pico](https://www.youtube.com/watch?v=fCIFYKFNcGc&ab_channel=KleistRobotics)
-- [Generating PWM Signals Using the Raspberry Pi Pico](https://www.youtube.com/watch?v=Au-oc4hxj-c&ab_channel=LowLevelLearning)
-- [Raspberry Pi Pico: nRF24L01 over SPI](https://www.youtube.com/watch?v=aP8rSN-1eT0&ab_channel=TinkerTechTrove)
-- [MPU6050 IMU with Raspberry Pi Pico](https://www.youtube.com/watch?v=XlpYI7XECzc&ab_channel=SethAltobelliClips)
+- 
   
-You can also check out [Pico C++ Documentation](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf) where you can find many information about PWM commands and controlling MPU6050.
+You can also check up [Pico C++ Documentation](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf) where you can find many information about PWM commands and controlling MPU6050.
