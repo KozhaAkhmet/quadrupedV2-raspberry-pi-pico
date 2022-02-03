@@ -136,11 +136,11 @@ void Leg::step(double dis, double omega, double freq){              //Function f
     toPos(tmpx+ R - R*cos(j), tmpy, tmpz + (R/1.5)*sinus);
     sleep_ms(100);
   }*/
-  double R = dis/2, tmpx = 40, tmpy = 40, tmpz = 60, sinus ,x ,y, z;
+  double R = dis/2, tmpx = 60, tmpy = 60, tmpz = 60, sinus ,x ,y, z;
   omega = (omega * PI)/180;
   //for(double j = freq ; j > freq - 2*PI ; j = j - 0.5){
     sinus= sin(freq) < 0 ? sin(freq) : 0 ;
-    x = - R*cos(freq); y = 0; z = tmpz + (R*1.5)*sinus;
+    x = - R*cos(freq); y = 0; z = tmpz + (R*1)*sinus;
     toPos( tmpx + x*cos(omega) - y*sin(omega),  tmpy + x*sin(omega) + y*cos(omega), z);
     //toPos(tmpx + R - R*cos(j), tmpy, tmpz + (R/1.5)*sinus);
   //}
@@ -303,10 +303,10 @@ void bodyCircularMotion(){
 void testWalk(){
   double angle = 0;
   for(double  freq ; freq > freq - 2*PI ; freq = freq - 0.5){
-  leg[0].step(70 ,angle ,   freq);
-  leg[1].step(70 ,angle + 180, freq + PI/2);
-  leg[2].step(70 ,angle ,   freq+ PI/2);
-  leg[3].step(70 ,angle + 180, freq );
+  leg[0].step(70 , angle + 90   , freq);
+  leg[1].step(70 , 90 - angle   , freq + PI);
+  leg[2].step(70 , - angle - 90 , freq + PI);
+  leg[3].step(70 , 270 + angle  , freq );
   sleep_ms(100);
   }
 }
