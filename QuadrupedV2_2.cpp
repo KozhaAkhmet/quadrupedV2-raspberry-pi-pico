@@ -27,7 +27,7 @@ void walk();
 void defaultPos() ;
 void test();
 void bodyCircularMotion();
-void testWalk();
+void walkCycle();
 
 static int addr = 0x68;
 
@@ -98,7 +98,7 @@ class Leg {                                                        //Creating Le
         Servo servo[3];
         void toPos(double posX, double posY, double posZ);
         void toAng(double al, double bet , double gam );
-        void step (double dis, double omega, double freq);
+        void stepCycle(double dis, double omega, double freq);
         void slide(double posX, double posY ,double posZ);
 };
 void Leg::toPos(double posX, double posY, double posZ) {           //Inverse kinematic (Needs Upgrade)
@@ -123,27 +123,17 @@ void Leg::toAng(double al, double bet , double gam ){
   servo[1].write(map(al,0,180,   servo[1].range[0],  servo[1].range[1]));
   servo[2].write(map(bet,0,180,  servo[2].range[0],  servo[2].range[1]));
 }
-void Leg::step(double dis, double omega, double freq){              //Function for steps (On procsess..)
-  /*double R=sqrt((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
-  double tmpx=lastPos.x,tmpy=lastPos.y,tmpz=lastPos.z, sinus;
-  absolute_time_t time = get_absolute_time();
-  //while(!(lastPos.x + R*cos(millis()/500) == posX)){
-  for(double j = 2*PI ; j > 0 ; j = j - 0.5){
-    sinus= sin(j) < 0 ? sin(j) : 0 ;
-    //tmpx + R - R*cos(j)
-    //get_absolute_time()
-    //
-    toPos(tmpx+ R - R*cos(j), tmpy, tmpz + (R/1.5)*sinus);
-    sleep_ms(100);
-  }*/
+void Leg::stepCycle(double dis, double omega, double freq){              //Function for stepCycles 
+  //get_absolute_time()
   double R = dis/2, tmpx = 60, tmpy = 60, tmpz = 60, sinus ,x ,y, z;
+
   omega = (omega * PI)/180;
-  //for(double j = freq ; j > freq - 2*PI ; j = j - 0.5){
-    sinus= sin(freq) < 0 ? sin(freq) : 0 ;
-    x = - R*cos(freq); y = 0; z = tmpz + (R*1)*sinus;
-    toPos( tmpx + x*cos(omega) - y*sin(omega),  tmpy + x*sin(omega) + y*cos(omega), z);
-    //toPos(tmpx + R - R*cos(j), tmpy, tmpz + (R/1.5)*sinus);
-  //}
+  sinus= sin(freq) < 0 ? sin(freq) : 0 ;
+  x = - R*cos(freq); 
+  y = 0; 
+  z = tmpz + (R*1)*sinus;
+
+  toPos( tmpx + x*cos(omega) - y*sin(omega),  tmpy + x*sin(omega) + y*cos(omega), z);
 }
 void Leg::slide(double posX, double posY ,double posZ){
   for( double flag = 0; flag <= 2*PI ; flag = flag + PI/4){
@@ -167,7 +157,7 @@ void Leg::slide(double posX, double posY ,double posZ){
 Leg leg[4];
 
 int main(){                                                         //Main Function
-  /*stdio_init_all();
+  stdio_init_all();
   printf("Hello, MPU6050! Reading raw data from registers...\n");
 
   i2c_init(i2c_default, 400 * 1000);
@@ -181,24 +171,24 @@ int main(){                                                         //Main Funct
 
   int16_t acceleration[3], gyro[3], temp;
 
-  while (0) {
+  while (1) {
     mpu6050_read_raw(acceleration, gyro, &temp);
     printf("Acc. X = %d, Y = %d, Z = %d\n", acceleration[0], acceleration[1],acceleration[2]);
     printf("Gyro. X = %d, Y = %d, Z = %d\n", gyro[0], gyro[1], gyro[2]);
     printf("Temp. = %f\n", (temp / 340.0) + 36.53);
     mpu6050_reset();
     sleep_ms(100);
-  }*/
+  }
 
-  defineServo();
+  /*defineServo();
   defaultPos();
   while (true)
   {
       //walk();
       //test2();
       //leg[1].slide(80,40,60);
-      testWalk();
-  }
+      walkCycle();
+  }*/
 }
 void defineServo(){
   int i,j;
@@ -300,13 +290,13 @@ void bodyCircularMotion(){
     sleep_ms(50);
   }
 }
-void testWalk(){
+void walkCycle(){
   double angle = 0;
   for(double  freq ; freq > freq - 2*PI ; freq = freq - 0.5){
-  leg[0].step(70 , angle + 90   , freq);
-  leg[1].step(70 , 90 - angle   , freq + PI);
-  leg[2].step(70 , - angle - 90 , freq + PI);
-  leg[3].step(70 , 270 + angle  , freq );
+  leg[0].stepCycle( 70 ,   angle + 90   , freq     );
+  leg[1].stepCycle( 70 , - angle + 90   , freq + PI);
+  leg[2].stepCycle( 70 , - angle - 90   , freq + PI);
+  leg[3].stepCycle( 70 ,   angle + 270  , freq     );
   sleep_ms(100);
   }
 }
