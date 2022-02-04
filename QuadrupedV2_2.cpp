@@ -28,6 +28,7 @@ void defaultPos() ;
 void test();
 void bodyCircularMotion();
 void walkCycle();
+void rotationCycle();
 
 static int addr = 0x68;
 
@@ -157,7 +158,7 @@ void Leg::slide(double posX, double posY ,double posZ){
 Leg leg[4];
 
 int main(){                                                         //Main Function
-  stdio_init_all();
+ /* stdio_init_all();
   printf("Hello, MPU6050! Reading raw data from registers...\n");
 
   i2c_init(i2c_default, 400 * 1000);
@@ -178,17 +179,18 @@ int main(){                                                         //Main Funct
     printf("Temp. = %f\n", (temp / 340.0) + 36.53);
     mpu6050_reset();
     sleep_ms(100);
-  }
+  }*/
 
-  /*defineServo();
+  defineServo();
   defaultPos();
   while (true)
   {
       //walk();
       //test2();
       //leg[1].slide(80,40,60);
-      walkCycle();
-  }*/
+      //walkCycle();
+      rotationCycle();
+  }
 }
 void defineServo(){
   int i,j;
@@ -297,6 +299,21 @@ void walkCycle(){
   leg[1].stepCycle( 70 , - angle + 90   , freq + PI);
   leg[2].stepCycle( 70 , - angle - 90   , freq + PI);
   leg[3].stepCycle( 70 ,   angle + 270  , freq     );
+  sleep_ms(100);
+  }
+}
+void rotationCycle(){
+  double angle = 0;
+  bool dir;
+  if(1)
+    angle = -135;
+  else  
+    angle = 45;
+  for(double  freq ; freq > freq - 2*PI ; freq = freq - 0.5){
+  leg[0].stepCycle( 70 ,   angle + 90  , freq     );
+  leg[1].stepCycle( 70 , - angle       , freq + PI);
+  leg[2].stepCycle( 70 , - angle       , freq + PI);
+  leg[3].stepCycle( 70 ,   angle + 90  , freq     );
   sleep_ms(100);
   }
 }
