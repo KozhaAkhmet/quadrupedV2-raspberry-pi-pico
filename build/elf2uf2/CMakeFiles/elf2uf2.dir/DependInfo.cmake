@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kozha/pico/pico-sdk/tools/elf2uf2/main.cpp" "/home/kozha/pico/Projects/QuadrupedV2_2/build/elf2uf2/CMakeFiles/elf2uf2.dir/main.cpp.o"
+  "/home/kozha/pico/pico-sdk/tools/elf2uf2/main.cpp" "/home/kozha/pico/Projects/QuadrupedV2/build/elf2uf2/CMakeFiles/elf2uf2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

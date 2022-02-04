@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
-  "/home/kozha/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/home/kozha/pico/Projects/QuadrupedV2_2/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
+  "/home/kozha/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/home/kozha/pico/Projects/QuadrupedV2/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kozha/pico/Projects/QuadrupedV2_2
+CMAKE_SOURCE_DIR = /home/kozha/pico/Projects/QuadrupedV2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kozha/pico/Projects/QuadrupedV2_2/build
+CMAKE_BINARY_DIR = /home/kozha/pico/Projects/QuadrupedV2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles /home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles /home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kozha/pico/Projects/QuadrupedV2_2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,17 +124,17 @@ ELF2UF2Build/fast:
 .PHONY : ELF2UF2Build/fast
 
 #=============================================================================
-# Target rules for targets named QuadrupedV2_2
+# Target rules for targets named main
 
 # Build rule for target.
-QuadrupedV2_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 QuadrupedV2_2
-.PHONY : QuadrupedV2_2
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-QuadrupedV2_2/fast:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/build
-.PHONY : QuadrupedV2_2/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named bs2_default_padded_checksummed_asm
@@ -175,40 +175,13 @@ bs2_default/fast:
 	$(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build
 .PHONY : bs2_default/fast
 
-QuadrupedV2_2.obj: QuadrupedV2_2.cpp.obj
-
-.PHONY : QuadrupedV2_2.obj
-
-# target to build an object file
-QuadrupedV2_2.cpp.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/QuadrupedV2_2.cpp.obj
-.PHONY : QuadrupedV2_2.cpp.obj
-
-QuadrupedV2_2.i: QuadrupedV2_2.cpp.i
-
-.PHONY : QuadrupedV2_2.i
-
-# target to preprocess a source file
-QuadrupedV2_2.cpp.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/QuadrupedV2_2.cpp.i
-.PHONY : QuadrupedV2_2.cpp.i
-
-QuadrupedV2_2.s: QuadrupedV2_2.cpp.s
-
-.PHONY : QuadrupedV2_2.s
-
-# target to generate assembly for a file
-QuadrupedV2_2.cpp.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/QuadrupedV2_2.cpp.s
-.PHONY : QuadrupedV2_2.cpp.s
-
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
@@ -217,7 +190,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i: home/kozha/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
@@ -226,7 +199,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s: home/kozha/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
@@ -235,7 +208,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj: home/kozha/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
@@ -244,7 +217,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i: home/kozha/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
@@ -253,7 +226,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s: home/kozha/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
@@ -262,7 +235,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj: home/kozha/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
@@ -271,7 +244,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i: home/kozha/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
@@ -280,7 +253,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s: home/kozha/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
@@ -289,7 +262,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj: home/kozha
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
@@ -298,7 +271,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i: home/kozha/p
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
@@ -307,7 +280,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s: home/kozha/p
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
@@ -316,7 +289,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.obj: home/kozha/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
@@ -325,7 +298,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i: home/kozha/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
@@ -334,7 +307,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s: home/kozha/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
@@ -343,7 +316,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.obj: home/kozha/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
@@ -352,7 +325,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i: home/kozha/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
@@ -361,7 +334,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s: home/kozha/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
@@ -370,7 +343,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.obj: home/kozha/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
@@ -379,7 +352,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i: home/kozha/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
@@ -388,7 +361,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s: home/kozha/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
@@ -397,7 +370,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.obj: home/ko
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
@@ -406,7 +379,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.i: home/kozh
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
@@ -415,7 +388,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.s: home/kozh
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
@@ -424,7 +397,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.obj: home/kozha/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
@@ -433,7 +406,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.i: home/kozha/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
@@ -442,7 +415,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.s: home/kozha/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
@@ -451,7 +424,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.obj: home/ko
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
@@ -460,7 +433,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i: home/kozh
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
@@ -469,7 +442,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s: home/kozh
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
@@ -478,7 +451,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.obj: home/ko
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
@@ -487,7 +460,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i: home/kozh
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
@@ -496,7 +469,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s: home/kozh
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
@@ -505,7 +478,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.obj: home/kozh
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
@@ -514,7 +487,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.i: home/kozha/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
@@ -523,7 +496,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.s: home/kozha/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
@@ -532,7 +505,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.obj: home/kozha/pico/p
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
@@ -541,7 +514,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i: home/kozha/pico/pic
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
@@ -550,7 +523,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s: home/kozha/pico/pic
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
@@ -559,7 +532,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.obj: home/kozha/pico/pico-s
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
@@ -568,7 +541,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.i: home/kozha/pico/pico-sdk
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
@@ -577,7 +550,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.s: home/kozha/pico/pico-sdk
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
@@ -586,7 +559,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
@@ -595,7 +568,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
@@ -604,7 +577,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
@@ -613,7 +586,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
@@ -622,7 +595,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
@@ -631,7 +604,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
@@ -640,7 +613,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
@@ -649,7 +622,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
@@ -658,7 +631,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.obj: home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
@@ -667,7 +640,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.obj: home/kozha/pico/pico-sdk/lib/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.i: home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
@@ -676,7 +649,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.i: home/kozha/pico/pico-sdk/lib/ti
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
 
 home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.s: home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
@@ -685,7 +658,7 @@ home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.s: home/kozha/pico/pico-sdk/lib/ti
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
 .PHONY : home/kozha/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.obj: home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
@@ -694,7 +667,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.obj: home/kozha/p
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.i: home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
@@ -703,7 +676,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.i: home/kozha/pic
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.s: home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
@@ -712,7 +685,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.s: home/kozha/pic
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.obj: home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
@@ -721,7 +694,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.obj: home/kozha/pico/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.i: home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
@@ -730,7 +703,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.i: home/kozha/pico/pico-
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.s: home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
@@ -739,7 +712,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.s: home/kozha/pico/pico-
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.obj: home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
@@ -748,7 +721,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.obj: home/kozha/pico/pico-sd
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.i: home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.i
@@ -757,7 +730,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.i: home/kozha/pico/pico-sdk/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.s: home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.s
@@ -766,7 +739,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.s: home/kozha/pico/pico-sdk/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/mutex.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/sem.obj: home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.obj
@@ -775,7 +748,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/sem.obj: home/kozha/pico/pico-sdk/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/sem.i: home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.i
@@ -784,7 +757,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/sem.i: home/kozha/pico/pico-sdk/sr
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_sync/sem.s: home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.s
@@ -793,7 +766,7 @@ home/kozha/pico/pico-sdk/src/common/pico_sync/sem.s: home/kozha/pico/pico-sdk/sr
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_sync/sem.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_time/time.obj: home/kozha/pico/pico-sdk/src/common/pico_time/time.c.obj
@@ -802,7 +775,7 @@ home/kozha/pico/pico-sdk/src/common/pico_time/time.obj: home/kozha/pico/pico-sdk
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_time/time.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_time/time.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_time/time.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_time/time.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_time/time.i: home/kozha/pico/pico-sdk/src/common/pico_time/time.c.i
@@ -811,7 +784,7 @@ home/kozha/pico/pico-sdk/src/common/pico_time/time.i: home/kozha/pico/pico-sdk/s
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_time/time.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_time/time.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_time/time.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_time/time.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_time/time.s: home/kozha/pico/pico-sdk/src/common/pico_time/time.c.s
@@ -820,7 +793,7 @@ home/kozha/pico/pico-sdk/src/common/pico_time/time.s: home/kozha/pico/pico-sdk/s
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_time/time.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_time/time.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_time/time.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_time/time.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.obj: home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -829,7 +802,7 @@ home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.i: home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
@@ -838,7 +811,7 @@ home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.s: home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
@@ -847,7 +820,7 @@ home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_util/datetime.obj: home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.obj
@@ -856,7 +829,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/datetime.obj: home/kozha/pico/pico
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_util/datetime.i: home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.i
@@ -865,7 +838,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/datetime.i: home/kozha/pico/pico-s
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_util/datetime.s: home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.s
@@ -874,7 +847,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/datetime.s: home/kozha/pico/pico-s
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/datetime.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_util/pheap.obj: home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.obj
@@ -883,7 +856,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/pheap.obj: home/kozha/pico/pico-sd
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_util/pheap.i: home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.i
@@ -892,7 +865,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/pheap.i: home/kozha/pico/pico-sdk/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_util/pheap.s: home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.s
@@ -901,7 +874,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/pheap.s: home/kozha/pico/pico-sdk/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/pheap.c.s
 
 home/kozha/pico/pico-sdk/src/common/pico_util/queue.obj: home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.obj
@@ -910,7 +883,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/queue.obj: home/kozha/pico/pico-sd
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.obj
 
 home/kozha/pico/pico-sdk/src/common/pico_util/queue.i: home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.i
@@ -919,7 +892,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/queue.i: home/kozha/pico/pico-sdk/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.i
 
 home/kozha/pico/pico-sdk/src/common/pico_util/queue.s: home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.s
@@ -928,7 +901,7 @@ home/kozha/pico/pico-sdk/src/common/pico_util/queue.s: home/kozha/pico/pico-sdk/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/common/pico_util/queue.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
@@ -937,7 +910,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
@@ -946,7 +919,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
@@ -955,7 +928,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
@@ -964,7 +937,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: home/kozha/p
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
@@ -973,7 +946,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/kozha/pic
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
@@ -982,7 +955,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/kozha/pic
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
@@ -991,7 +964,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.obj: home/kozha
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
@@ -1000,7 +973,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
@@ -1009,7 +982,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
@@ -1018,7 +991,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -1027,7 +1000,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
@@ -1036,7 +1009,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
@@ -1045,7 +1018,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
@@ -1054,7 +1027,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj: home/kozha/pico/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
@@ -1063,7 +1036,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.i: home/kozha/pico/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
@@ -1072,7 +1045,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.s: home/kozha/pico/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
@@ -1081,7 +1054,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/kozha/pico/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
@@ -1090,7 +1063,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/kozha/pico/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
@@ -1099,7 +1072,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/kozha/pico/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
@@ -1108,7 +1081,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: home
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
@@ -1117,7 +1090,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/kozha/pico/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
@@ -1126,7 +1099,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/kozha/pico/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
@@ -1135,7 +1108,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/kozha/pico/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
@@ -1144,7 +1117,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
@@ -1153,7 +1126,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
@@ -1162,7 +1135,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
@@ -1171,7 +1144,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
@@ -1180,7 +1153,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
@@ -1189,7 +1162,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
@@ -1198,7 +1171,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
@@ -1207,7 +1180,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
@@ -1216,7 +1189,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
@@ -1225,7 +1198,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
@@ -1234,7 +1207,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
@@ -1243,7 +1216,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
@@ -1252,7 +1225,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: home/koz
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
@@ -1261,7 +1234,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/kozha
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
@@ -1270,7 +1243,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/kozha
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
@@ -1279,7 +1252,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
@@ -1288,7 +1261,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
@@ -1297,7 +1270,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
@@ -1306,7 +1279,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: home/koz
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
@@ -1315,7 +1288,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
@@ -1324,7 +1297,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
@@ -1333,7 +1306,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
@@ -1342,7 +1315,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
@@ -1351,7 +1324,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: home/kozha
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
@@ -1360,7 +1333,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: home/ko
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
@@ -1369,7 +1342,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: home/kozh
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
@@ -1378,7 +1351,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: home/kozh
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
@@ -1387,7 +1360,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.obj: home/kozha/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
@@ -1396,7 +1369,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.i: home/kozha/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
@@ -1405,7 +1378,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.s: home/kozha/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
@@ -1414,7 +1387,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: home
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
@@ -1423,7 +1396,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/r
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
@@ -1432,7 +1405,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/r
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
@@ -1441,7 +1414,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/r
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
@@ -1450,7 +1423,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: home/kozha/p
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
@@ -1459,7 +1432,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: home/kozh
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
@@ -1468,7 +1441,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: home/kozha/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
@@ -1477,7 +1450,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: home/kozha/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
@@ -1486,7 +1459,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.obj: home/kozha/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
@@ -1495,7 +1468,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.i: home/kozha/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
@@ -1504,7 +1477,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.s: home/kozha/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
@@ -1513,7 +1486,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: home/k
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
@@ -1522,7 +1495,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj:
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
@@ -1531,7 +1504,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: home/kozha/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
@@ -1540,7 +1513,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: home/kozha/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
@@ -1549,7 +1522,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: home/kozha/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
@@ -1558,7 +1531,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: home/koz
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
@@ -1567,7 +1540,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/kozha/p
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
@@ -1576,7 +1549,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.i: home/kozha/pic
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
@@ -1585,7 +1558,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.s: home/kozha/pic
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
@@ -1594,7 +1567,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
@@ -1603,7 +1576,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
@@ -1612,7 +1585,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
@@ -1621,7 +1594,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: home/kozha/pic
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
@@ -1630,7 +1603,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/kozha/pico/
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
@@ -1639,7 +1612,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/kozha/pico/
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
@@ -1648,7 +1621,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: home
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
@@ -1657,7 +1630,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: home/k
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
@@ -1666,7 +1639,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: home/k
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1675,7 +1648,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: home/kozha/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
@@ -1684,7 +1657,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: home/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
@@ -1693,7 +1666,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: home/ko
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
@@ -1702,7 +1675,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: home/ko
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
@@ -1711,7 +1684,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: home/kozha/pico/pi
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
@@ -1720,7 +1693,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/kozha/pico/pico
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
@@ -1729,7 +1702,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/kozha/pico/pico
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
@@ -1738,7 +1711,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: home
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
@@ -1747,7 +1720,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i: home/k
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
@@ -1756,7 +1729,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s: home/k
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
@@ -1765,7 +1738,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj: home/kozha
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
@@ -1774,7 +1747,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i: home/kozha/p
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
@@ -1783,7 +1756,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s: home/kozha/p
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
@@ -1792,7 +1765,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.obj
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
@@ -1801,7 +1774,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i: 
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
@@ -1810,7 +1783,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s: 
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -1819,7 +1792,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: home/kozha/pico/
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
@@ -1828,7 +1801,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/kozha/pico/pi
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
@@ -1837,7 +1810,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/kozha/pico/pi
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj: home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
@@ -1846,7 +1819,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj: home/kozha
 
 # target to build an object file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i: home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
@@ -1855,7 +1828,7 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i: home/kozha/p
 
 # target to preprocess a source file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
 
 home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s: home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
@@ -1864,8 +1837,35 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s: home/kozha/p
 
 # target to generate assembly for a file
 home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
-	$(MAKE) -f CMakeFiles/QuadrupedV2_2.dir/build.make CMakeFiles/QuadrupedV2_2.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+
+src/main.obj: src/main.cpp.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -1876,13 +1876,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ELF2UF2Build"
-	@echo "... QuadrupedV2_2"
+	@echo "... main"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default"
-	@echo "... QuadrupedV2_2.obj"
-	@echo "... QuadrupedV2_2.i"
-	@echo "... QuadrupedV2_2.s"
 	@echo "... home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... home/kozha/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -2068,6 +2065,9 @@ help:
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... src/main.obj"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
