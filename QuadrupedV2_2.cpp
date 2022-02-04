@@ -28,7 +28,7 @@ void defaultPos() ;
 void test();
 void bodyCircularMotion();
 void walkCycle();
-void rotationCycle();
+void rotationCycle( bool dir );
 
 static int addr = 0x68;
 
@@ -189,7 +189,7 @@ int main(){                                                         //Main Funct
       //test2();
       //leg[1].slide(80,40,60);
       //walkCycle();
-      rotationCycle();
+      rotationCycle(1);
   }
 }
 void defineServo(){
@@ -294,26 +294,32 @@ void bodyCircularMotion(){
 }
 void walkCycle(){
   double angle = 0;
-  for(double  freq ; freq > freq - 2*PI ; freq = freq - 0.5){
+
+  for( double  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
+
   leg[0].stepCycle( 70 ,   angle + 90   , freq     );
   leg[1].stepCycle( 70 , - angle + 90   , freq + PI);
   leg[2].stepCycle( 70 , - angle - 90   , freq + PI);
   leg[3].stepCycle( 70 ,   angle + 270  , freq     );
-  sleep_ms(100);
+
+  sleep_ms(40);
   }
 }
-void rotationCycle(){
+void rotationCycle( bool dir ){
   double angle = 0;
-  bool dir;
-  if(1)
+
+  if( dir = 1 )
     angle = -135;
   else  
     angle = 45;
-  for(double  freq ; freq > freq - 2*PI ; freq = freq - 0.5){
+
+  for( double  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
+
   leg[0].stepCycle( 70 ,   angle + 90  , freq     );
   leg[1].stepCycle( 70 , - angle       , freq + PI);
   leg[2].stepCycle( 70 , - angle       , freq + PI);
   leg[3].stepCycle( 70 ,   angle + 90  , freq     );
-  sleep_ms(100);
+
+  sleep_ms(40);
   }
 }
