@@ -17,6 +17,7 @@ add_executable(main
 src/main.cpp
 src/NRF24
 src/MYSERVO
+src/MPU6050
 )
 
 pico_set_program_name(main "main")

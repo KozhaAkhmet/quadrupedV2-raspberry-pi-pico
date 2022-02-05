@@ -284,6 +284,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "/home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
+  "/home/kozha/pico/Projects/QuadrupedV2/src/MPU6050.cpp" "/home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles/main.dir/src/MPU6050.cpp.obj"
   "/home/kozha/pico/Projects/QuadrupedV2/src/MYSERVO.cpp" "/home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles/main.dir/src/MYSERVO.cpp.obj"
   "/home/kozha/pico/Projects/QuadrupedV2/src/NRF24.cpp" "/home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles/main.dir/src/NRF24.cpp.obj"
   "/home/kozha/pico/Projects/QuadrupedV2/src/main.cpp" "/home/kozha/pico/Projects/QuadrupedV2/build/CMakeFiles/main.dir/src/main.cpp.obj"

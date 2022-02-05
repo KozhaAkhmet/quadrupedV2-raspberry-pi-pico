@@ -1867,6 +1867,33 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
+src/MPU6050.obj: src/MPU6050.cpp.obj
+
+.PHONY : src/MPU6050.obj
+
+# target to build an object file
+src/MPU6050.cpp.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MPU6050.cpp.obj
+.PHONY : src/MPU6050.cpp.obj
+
+src/MPU6050.i: src/MPU6050.cpp.i
+
+.PHONY : src/MPU6050.i
+
+# target to preprocess a source file
+src/MPU6050.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MPU6050.cpp.i
+.PHONY : src/MPU6050.cpp.i
+
+src/MPU6050.s: src/MPU6050.cpp.s
+
+.PHONY : src/MPU6050.s
+
+# target to generate assembly for a file
+src/MPU6050.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MPU6050.cpp.s
+.PHONY : src/MPU6050.cpp.s
+
 src/MYSERVO.obj: src/MYSERVO.cpp.obj
 
 .PHONY : src/MYSERVO.obj
@@ -2149,6 +2176,9 @@ help:
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... src/MPU6050.obj"
+	@echo "... src/MPU6050.i"
+	@echo "... src/MPU6050.s"
 	@echo "... src/MYSERVO.obj"
 	@echo "... src/MYSERVO.i"
 	@echo "... src/MYSERVO.s"

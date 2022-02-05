@@ -69,6 +69,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
   "CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
   "CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj"
+  "CMakeFiles/main.dir/src/MPU6050.cpp.obj"
   "CMakeFiles/main.dir/src/MYSERVO.cpp.obj"
   "CMakeFiles/main.dir/src/NRF24.cpp.obj"
   "CMakeFiles/main.dir/src/main.cpp.obj"

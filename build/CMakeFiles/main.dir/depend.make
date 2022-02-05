@@ -2141,6 +2141,30 @@ CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/uniqu
 
 CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
 
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: ../inc/MPU6050/MPU6050.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: ../src/MPU6050.cpp
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/boards/include/boards/pico.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/common/pico_base/include/pico.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/common/pico_base/include/pico/assert.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/common/pico_base/include/pico/config.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/common/pico_base/include/pico/error.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/common/pico_base/include/pico/types.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/common/pico_time/include/pico/time.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: generated/pico_base/pico/config_autogen.h
+CMakeFiles/main.dir/src/MPU6050.cpp.obj: generated/pico_base/pico/version.h
+
 CMakeFiles/main.dir/src/MYSERVO.cpp.obj: ../inc/MyServo/MYSERVO.h
 CMakeFiles/main.dir/src/MYSERVO.cpp.obj: ../src/MYSERVO.cpp
 CMakeFiles/main.dir/src/MYSERVO.cpp.obj: /home/kozha/pico/pico-sdk/src/boards/include/boards/pico.h
@@ -2207,6 +2231,7 @@ CMakeFiles/main.dir/src/NRF24.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/
 CMakeFiles/main.dir/src/NRF24.cpp.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/main.dir/src/NRF24.cpp.obj: generated/pico_base/pico/version.h
 
+CMakeFiles/main.dir/src/main.cpp.obj: ../inc/MPU6050/MPU6050.h
 CMakeFiles/main.dir/src/main.cpp.obj: ../inc/MyServo/MYSERVO.h
 CMakeFiles/main.dir/src/main.cpp.obj: ../inc/nRF24L01/NRF24.h
 CMakeFiles/main.dir/src/main.cpp.obj: ../src/main.cpp
@@ -2226,6 +2251,7 @@ CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardw
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h
+CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h
@@ -2233,6 +2259,7 @@ CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardw
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h
+CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pwm.h
@@ -2244,6 +2271,7 @@ CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/c
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h
+CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h
 CMakeFiles/main.dir/src/main.cpp.obj: /home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h
