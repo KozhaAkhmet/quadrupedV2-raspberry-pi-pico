@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+../inc/MyServo/MYSERVO.h
+pico/stdlib.h
+../inc/MyServo/pico/stdlib.h
+hardware/pwm.h
+../inc/MyServo/hardware/pwm.h
+
+../inc/nRF24L01/NRF24.h
+hardware/spi.h
+../inc/nRF24L01/hardware/spi.h
+hardware/gpio.h
+../inc/nRF24L01/hardware/gpio.h
+
+/home/kozha/pico/Projects/QuadrupedV2/src/MYSERVO.cpp
+MyServo/MYSERVO.h
+/home/kozha/pico/Projects/QuadrupedV2/src/MyServo/MYSERVO.h
+hardware/pwm.h
+/home/kozha/pico/Projects/QuadrupedV2/src/hardware/pwm.h
+
 /home/kozha/pico/Projects/QuadrupedV2/src/main.cpp
 pico/stdlib.h
 /home/kozha/pico/Projects/QuadrupedV2/src/pico/stdlib.h
@@ -17,10 +35,14 @@ pico/binary_info.h
 /home/kozha/pico/Projects/QuadrupedV2/src/pico/binary_info.h
 hardware/clocks.h
 /home/kozha/pico/Projects/QuadrupedV2/src/hardware/clocks.h
-hardware/i2c.h
-/home/kozha/pico/Projects/QuadrupedV2/src/hardware/i2c.h
+hardware/spi.h
+/home/kozha/pico/Projects/QuadrupedV2/src/hardware/spi.h
 math.h
 -
+nRF24L01/NRF24.h
+/home/kozha/pico/Projects/QuadrupedV2/src/nRF24L01/NRF24.h
+MyServo/MYSERVO.h
+/home/kozha/pico/Projects/QuadrupedV2/src/MyServo/MYSERVO.h
 
 /home/kozha/pico/pico-sdk/src/boards/include/boards/pico.h
 
@@ -114,13 +136,13 @@ hardware/platform_defs.h
 
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h
 
-/home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h
-
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h
 
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h
 
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h
+
+/home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h
 
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h
 
@@ -131,12 +153,6 @@ hardware/address_mapped.h
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/address_mapped.h
 hardware/regs/clocks.h
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/regs/clocks.h
-
-/home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h
-hardware/address_mapped.h
-/home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/address_mapped.h
-hardware/regs/i2c.h
-/home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/regs/i2c.h
 
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h
 hardware/address_mapped.h
@@ -163,6 +179,12 @@ hardware/regs/sio.h
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/regs/sio.h
 hardware/structs/interp.h
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/structs/interp.h
+
+/home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h
+hardware/address_mapped.h
+/home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/address_mapped.h
+hardware/regs/spi.h
+/home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/regs/spi.h
 
 /home/kozha/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h
 hardware/address_mapped.h
@@ -198,16 +220,6 @@ hardware/structs/sio.h
 hardware/structs/padsbank0.h
 /home/kozha/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/hardware/structs/padsbank0.h
 
-/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h
-pico.h
-/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/pico.h
-pico/time.h
-/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/pico/time.h
-hardware/structs/i2c.h
-/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/hardware/structs/i2c.h
-hardware/regs/dreq.h
-/home/kozha/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/hardware/regs/dreq.h
-
 /home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h
 pico.h
 /home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pico.h
@@ -215,6 +227,16 @@ hardware/structs/pwm.h
 /home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/hardware/structs/pwm.h
 hardware/regs/dreq.h
 /home/kozha/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/hardware/regs/dreq.h
+
+/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h
+pico.h
+/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/pico.h
+pico/time.h
+/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/pico/time.h
+hardware/structs/spi.h
+/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/hardware/structs/spi.h
+hardware/regs/dreq.h
+/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/hardware/regs/dreq.h
 
 /home/kozha/pico/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h
 pico.h
@@ -237,10 +259,6 @@ sys/cdefs.h
 -
 pico/types.h
 /home/kozha/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/pico/types.h
-
-/home/kozha/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
-cstdlib
--
 
 /home/kozha/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h
 pico.h

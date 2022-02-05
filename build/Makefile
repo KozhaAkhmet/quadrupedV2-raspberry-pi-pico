@@ -1111,6 +1111,33 @@ home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.obj
+
+# target to build an object file
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.i: home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.i
+
+# target to preprocess a source file
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.s: home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.s
+
+# target to generate assembly for a file
+home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+.PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+
 home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj
@@ -1840,6 +1867,60 @@ home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
+src/MYSERVO.obj: src/MYSERVO.cpp.obj
+
+.PHONY : src/MYSERVO.obj
+
+# target to build an object file
+src/MYSERVO.cpp.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MYSERVO.cpp.obj
+.PHONY : src/MYSERVO.cpp.obj
+
+src/MYSERVO.i: src/MYSERVO.cpp.i
+
+.PHONY : src/MYSERVO.i
+
+# target to preprocess a source file
+src/MYSERVO.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MYSERVO.cpp.i
+.PHONY : src/MYSERVO.cpp.i
+
+src/MYSERVO.s: src/MYSERVO.cpp.s
+
+.PHONY : src/MYSERVO.s
+
+# target to generate assembly for a file
+src/MYSERVO.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MYSERVO.cpp.s
+.PHONY : src/MYSERVO.cpp.s
+
+src/NRF24.obj: src/NRF24.cpp.obj
+
+.PHONY : src/NRF24.obj
+
+# target to build an object file
+src/NRF24.cpp.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/NRF24.cpp.obj
+.PHONY : src/NRF24.cpp.obj
+
+src/NRF24.i: src/NRF24.cpp.i
+
+.PHONY : src/NRF24.i
+
+# target to preprocess a source file
+src/NRF24.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/NRF24.cpp.i
+.PHONY : src/NRF24.cpp.i
+
+src/NRF24.s: src/NRF24.cpp.s
+
+.PHONY : src/NRF24.s
+
+# target to generate assembly for a file
+src/NRF24.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/NRF24.cpp.s
+.PHONY : src/NRF24.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -1984,6 +2065,9 @@ help:
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s"
+	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.obj"
+	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.i"
+	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_spi/spi.s"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/hardware_sync/sync.s"
@@ -2065,6 +2149,12 @@ help:
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
 	@echo "... home/kozha/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... src/MYSERVO.obj"
+	@echo "... src/MYSERVO.i"
+	@echo "... src/MYSERVO.s"
+	@echo "... src/NRF24.obj"
+	@echo "... src/NRF24.i"
+	@echo "... src/NRF24.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

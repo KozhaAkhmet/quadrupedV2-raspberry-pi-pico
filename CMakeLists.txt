@@ -15,7 +15,8 @@ pico_sdk_init()
 
 add_executable(main 
 src/main.cpp
-
+src/NRF24
+src/MYSERVO
 )
 
 pico_set_program_name(main "main")
@@ -32,6 +33,7 @@ target_link_libraries(main
 pico_stdlib
 hardware_pwm
 hardware_i2c
+hardware_spi
 )
 
 pico_add_extra_outputs(main)

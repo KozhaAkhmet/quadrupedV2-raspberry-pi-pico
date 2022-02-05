@@ -1,1 +1,0 @@
-cmd='/home/kozha/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6461.75/bin/cmake/linux/bin/cmake;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

@@ -11,12 +11,16 @@
 #include "hardware/pwm.h"
 #include "pico/binary_info.h"
 #include "hardware/clocks.h"
-#include "hardware/i2c.h"
+#include "hardware/spi.h"
+//#include "hardware/i2c.h"
 #include <math.h>
+#include "nRF24L01/NRF24.h"
+#include "MyServo/MYSERVO.h"
 
 //#include "inc/MyServo"
 
 #define PI 3.14
+
 
 #define claw      83                                          //Defining Leg`s length in mm
 #define connecter 55
@@ -31,7 +35,7 @@ void walkCycle();
 void rotationCycle( bool dir );
 
 static int addr = 0x68;
-
+/*
 static void mpu6050_reset() {
 uint8_t buf[] = {0x6B, 0x00};
 i2c_write_blocking(i2c1, addr, buf, 2, false);
@@ -55,31 +59,11 @@ i2c_write_blocking(i2c1, addr, &val, sizeof(val), false);
 i2c_read_blocking(i2c1, addr, buffer, sizeof(buffer), false);
 
 *temp = buffer[0] << 8 | buffer[1];
-}
+}*/
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
-struct Servo{                                                  //Defining Servo class
-    public:
-    int servoPin;
-    int range[2];
-    void init();
-    void write(float pusle); 
-};
-void Servo::init(){
-  gpio_set_function(servoPin, GPIO_FUNC_PWM);
-  uint slice_num = pwm_gpio_to_slice_num(servoPin);
-
-  pwm_set_clkdiv(slice_num, 64.f);
-  pwm_set_wrap(slice_num, 39062.f);
-
-  pwm_set_enabled(slice_num,true);
-}
-void Servo::write(float pulse){                               //Custom Servo control function
-  pwm_set_gpio_level(servoPin, (pulse/20000.f)*39062.f);
 }
 
 struct Ang {
@@ -104,17 +88,21 @@ class Leg {                                                        //Creating Le
 };
 void Leg::toPos(double posX, double posY, double posZ) {           //Inverse kinematic (Needs Upgrade)
     double al, bet, gam, L, L1 = sqrt(posX * posX + posY * posY);
+
     L = sqrt(posZ * posZ + (L1 - initial) * (L1 - initial));
-    al = (180 * (acos((claw * claw - connecter * connecter - L * L) / (-2 * connecter * L)))) / PI +
-         (180 * (acos(posZ / L)) / PI);
+
+    al = (180 * (acos((claw * claw - connecter * connecter - L * L) / (-2 * connecter * L)))) / PI + (180 * (acos(posZ / L)) / PI);
     gam = (((180 * (atan(posX / posY))) / PI + 45));
     bet = (180 * acos((L * L - claw * claw - connecter * connecter) / (-2 * claw * connecter))) / PI;
+    
     lastAng.al = al;
     lastAng.gam = gam;
     lastAng.bet = bet;
+    
     lastPos.x = posX;
     lastPos.y = posY;
     lastPos.z = posZ;
+
     servo[0].write(map(gam,0,180,  servo[0].range[0],  servo[0].range[1]));
     servo[1].write(map(al,0,180,   servo[1].range[0],  servo[1].range[1]));
     servo[2].write(map(bet,0,180,  servo[2].range[0],  servo[2].range[1]));
@@ -126,13 +114,14 @@ void Leg::toAng(double al, double bet , double gam ){
 }
 void Leg::stepCycle(double dis, double omega, double freq){              //Function for stepCycles 
   //get_absolute_time()
-  double R = dis/2, tmpx = 60, tmpy = 60, tmpz = 60, sinus ,x ,y, z;
+  double R = dis/2, tmpx = 60, tmpy = 60, tmpz = 60;
+  double sinus= sin(freq) < 0 ? sin(freq) : 0 ;  
 
-  omega = (omega * PI)/180;
-  sinus= sin(freq) < 0 ? sin(freq) : 0 ;
-  x = - R*cos(freq); 
-  y = 0; 
-  z = tmpz + (R*1)*sinus;
+  double x = - R*cos(freq); 
+  double y = 0; 
+  double z = tmpz + (R*1)*sinus;  //Making a half circle on z axis
+
+  omega = (omega * PI)/180;       //Converting to radian
 
   toPos( tmpx + x*cos(omega) - y*sin(omega),  tmpy + x*sin(omega) + y*cos(omega), z);
 }
@@ -181,14 +170,35 @@ int main(){                                                         //Main Funct
     sleep_ms(100);
   }*/
 
+
+    NRF24 nrf(spi1, 9, 8);
+    nrf.config();
+    nrf.modeTX();
+
+    char buffer[32];
+    while(1){
+        sprintf(buffer,"60");
+        buffer[30] = 'R';
+        buffer[31] = 'O'; // not a zero.
+        nrf.sendMessage(buffer);
+        sleep_ms(3000);
+
+        sprintf(buffer,"-60");
+        buffer[30] = 'R';
+        buffer[31] = 'O'; // not a zero.
+        nrf.sendMessage(buffer);
+        sleep_ms(3000);
+
+    }
+
   defineServo();
   defaultPos();
   while (true)
   {
       //walk();
-      //test2();
+      //test();
       //leg[1].slide(80,40,60);
-      //walkCycle();
+      walkCycle();
       //rotationCycle(1);
   }
 }
