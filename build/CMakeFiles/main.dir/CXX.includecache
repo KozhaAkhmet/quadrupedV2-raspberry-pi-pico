@@ -25,6 +25,8 @@ hardware/gpio.h
 /home/kozha/pico/Projects/QuadrupedV2/src/main.cpp
 iostream
 -
+stdio.h
+-
 pico/stdlib.h
 /home/kozha/pico/Projects/QuadrupedV2/src/pico/stdlib.h
 pico/binary_info.h

@@ -10,9 +10,9 @@ NRF24::NRF24(spi_inst_t *port, uint16_t csn, uint16_t ce)
     this->ce = ce;
 
     spi_init(this->port, 1000000 );
-    gpio_set_function(10, GPIO_FUNC_SPI);
-    gpio_set_function(11, GPIO_FUNC_SPI);
-    gpio_set_function(12, GPIO_FUNC_SPI);
+    gpio_set_function(6, GPIO_FUNC_SPI);
+    gpio_set_function(7, GPIO_FUNC_SPI);
+    gpio_set_function(4, GPIO_FUNC_SPI);
 
     gpio_init(csn);
     gpio_init(ce);
@@ -61,7 +61,7 @@ void NRF24::config(){
 
     writeReg(1,0); // no ack.
 
-    writeReg(5, 60); // channel.
+    writeReg(5, 0101); // channel.
 
     writeReg(0x0a, (uint8_t*)"gyroc",5);
     writeReg(0x10, (uint8_t*)"gyroc",5);
@@ -76,12 +76,14 @@ void NRF24::modeTX(){
     uint8_t reg = readReg(0);
     reg &= ~(1<<0);
     writeReg(0, reg);
+    ceLow();
     sleep_us(130);
 }
 void NRF24::modeRX(){
     uint8_t reg = readReg(0);
     reg |= (1<<0);
     writeReg(0, reg);
+    ceHigh();
     sleep_us(130);
 
 }

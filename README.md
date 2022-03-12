@@ -1,6 +1,12 @@
 # Quadruped Robot On Raspberry pi Pico
 ## Hardware
 
+[![asd](Pictures/Screenshot%20from%202022-03-12%2020-25-41.png)](https://www.youtube.com/watch?v=42VeJgC9H7w)
+___
+
+
+
+
 ![Pico pinout](Pictures/raspberry-pi-pico-pinout-featured-image.jpg)
 
 ## Software

@@ -1,11 +1,10 @@
 /*
 * made by Kozha Akhmet Abdramanov
 * Quadruped Robot V2 on Raspberry Pi Pico
-
-*This code not include stable gait function. Im working on that either trying stabilize Robot Functionality.
 *
 */
 #include <iostream>
+#include <stdio.h>
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/clocks.h"
@@ -18,7 +17,6 @@
 
 #define PI 3.14
 
-
 #define claw      83                                          //Defining Leg`s length in mm
 #define connecter 55
 #define initial   33    
@@ -30,6 +28,9 @@ void test();
 void bodyCircularMotion();
 void walkCycle();
 void rotationCycle( bool dir );
+
+
+
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
@@ -141,26 +142,26 @@ int main(){                                                         //Main Funct
     sleep_ms(100);
   }*/
 
-
-    NRF24 nrf(spi1, 9, 8);
+    /*uint8_t addr[6] = "Node1";
+    NRF24 nrf(spi0, 16, 17);
     nrf.config();
     nrf.modeTX();
-
+    
     char buffer[32];
     while(1){
         sprintf(buffer,"60");
         buffer[30] = 'R';
         buffer[31] = 'O'; // not a zero.
         nrf.sendMessage(buffer);
-        sleep_ms(3000);
+        sleep_ms(1000);
 
         sprintf(buffer,"-60");
         buffer[30] = 'R';
         buffer[31] = 'O'; // not a zero.
         nrf.sendMessage(buffer);
-        sleep_ms(3000);
+        sleep_ms(1000);
 
-    }
+    }*/
 
   defineServo();
   defaultPos();
@@ -169,8 +170,9 @@ int main(){                                                         //Main Funct
       //walk();
       //test();
       //leg[1].slide(80,40,60);
-      walkCycle();
-      //rotationCycle(1);
+      //walkCycle();
+      rotationCycle(1);
+      //bodyCircularMotion();
   }
 }
 void defineServo(){
@@ -283,7 +285,7 @@ void walkCycle(){
   leg[2].stepCycle( 70 , - angle - 90   , freq + PI);
   leg[3].stepCycle( 70 ,   angle + 270  , freq     );
 
-  sleep_ms(40);
+  sleep_ms(30);
   }
 }
 void rotationCycle( bool dir ){
