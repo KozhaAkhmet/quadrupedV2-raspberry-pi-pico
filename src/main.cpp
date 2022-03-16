@@ -1,5 +1,5 @@
 /*
-* made by Kozha Akhmet Abdramanov
+* Made by Kozha Akhmet Abdramanov
 * Quadruped Robot V2 on Raspberry Pi Pico
 *
 */
