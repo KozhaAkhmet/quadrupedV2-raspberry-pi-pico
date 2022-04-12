@@ -1,0 +1,201 @@
+{
+  "uuid": "39c01fc5746af01f5c5b77bd1ea9e4ee",
+  "path": "Offline/Quadruped%20On%20Pico",
+  "name": "Quadruped On Pico",
+  "content": "",
+  "created_at": "2022-04-08 20:48:07",
+  "updated_at": "2022-04-13 00:57:57",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "cef27a513737a26e493f46005483be27",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "595f1b159cbb1fc2159315f85f2042a1": 1,
+        "45b9f1208a3544c8850b124d3a3f0356": 12,
+        "f69de2396b274a4b9d35ee221110e472": 1,
+        "ca23224e168341f2841ea72bd0a96b5e": 1,
+        "bb0dfa1c11dc40b5b00b2e787034e251": 1,
+        "deea03f8f6b5fb76bfc567f1dd2e3329": 1,
+        "67082a4ee642ac71e2dcdf6758d8dd66": 1,
+        "5608e5afc7d743498678b62b5923523c": 1,
+        "2780792f521f4754895c7736666352ff": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "Li-Ion Battary",
+          1,
+          "BATTARY-10",
+          "B1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Q&J",
+            "BOM_Manufacturer Part": "CR1220-2",
+            "BOM_Supplier Part": "C70381",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "dd04b4e707af4500bef616044a3fdefb",
+            "uuid": "67082a4ee642ac71e2dcdf6758d8dd66"
+          }
+        ],
+        [
+          "1000uF",
+          1,
+          "CAP-TH_BD10.0-P5.00-D1.0-FD",
+          "C",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ValuePro",
+            "BOM_Manufacturer Part": "1000uF 16V 10*20",
+            "BOM_Supplier Part": "C43830",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "10740f144756421793e1ecc7520b3129",
+            "uuid": "deea03f8f6b5fb76bfc567f1dd2e3329"
+          }
+        ],
+        [
+          "Motor_Servo",
+          12,
+          "SERVOPINS",
+          "M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "9f1840c4855b46c9a4b4169666d21fb9",
+            "uuid": "45b9f1208a3544c8850b124d3a3f0356"
+          }
+        ],
+        [
+          "1k",
+          1,
+          "JSCPCBLIB-RESISTOR-GENERIC",
+          "R1",
+          {
+            "BOM_Supplier": "Reichelt",
+            "BOM_Supplier Part": "9900001849626",
+            "BOM_Manufacturer": "Yageo",
+            "BOM_Manufacturer Part": "MF0207FTE52-0R",
+            "puuid": "8dd20af000ef435ba176edf8bb70c07b",
+            "uuid": "2780792f521f4754895c7736666352ff"
+          }
+        ],
+        [
+          "SK-12F02-G030",
+          1,
+          "SW-TH_G-SWITCH_SK-12F02-G030",
+          "SW1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2848892",
+            "BOM_Manufacturer": "G-Switch(品赞)",
+            "BOM_Manufacturer Part": "SK-12F02-G030",
+            "puuid": "b82c64ea78a44c36ae8da5918741e9d0",
+            "uuid": "f69de2396b274a4b9d35ee221110e472"
+          }
+        ],
+        [
+          "Push Button",
+          1,
+          "SMD-BUTTON",
+          "SW2",
+          {
+            "BOM_Supplier Part": "COM-08720",
+            "BOM_Supplier": "SparkFun",
+            "BOM_Manufacturer Part": "",
+            "puuid": "e67bc8a1676b472a8c9072bebba55248",
+            "uuid": "5608e5afc7d743498678b62b5923523c"
+          }
+        ],
+        [
+          "RASPBERRYPI-PICO",
+          1,
+          "RASPBERRYPIPICO",
+          "U1",
+          {
+            "BOM_Manufacturer Part": "RASPBERRY PI PICO",
+            "BOM_Supplier": "Element14",
+            "BOM_Supplier Part": "3643332",
+            "BOM_Manufacturer": "Raspberry-PI",
+            "puuid": "4705ae0ce8cd472d93df6896e7645780",
+            "uuid": "ca23224e168341f2841ea72bd0a96b5e"
+          }
+        ],
+        [
+          "MPU6050",
+          1,
+          "MPU6050",
+          "U2",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier": "",
+            "BOM_Supplier Part": "GY521",
+            "puuid": "0a54a539de8c4950827a56fa2ac4604e",
+            "uuid": "bb0dfa1c11dc40b5b00b2e787034e251"
+          }
+        ],
+        [
+          "NRF24L01",
+          1,
+          "WIRELM-SMD_AI_NRF24L01",
+          "U3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Ai-Thinker",
+            "BOM_Manufacturer Part": "NRF24L01+功率加强版绑定2.4Gwireless module",
+            "BOM_Supplier Part": "C90751",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "dd4872f0dd1046f8aa6aba607b93b45c",
+            "uuid": "595f1b159cbb1fc2159315f85f2042a1"
+          }
+        ]
+      ],
+      "updateTime": 1649800677,
+      "createTime": 1649441270,
+      "histories": [],
+      "created_at": "2022-04-08 21:07:50",
+      "updated_at": "2022-04-13 00:57:57"
+    },
+    {
+      "uuid": "ee204d4c12f67bacb2f8ebfd742eddd1",
+      "puuid": "39c01fc5746af01f5c5b77bd1ea9e4ee",
+      "title": "PCB_Quadruped On Pico_3",
+      "filename": "PCB_Quadruped On Pico_3.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "dd04b4e707af4500bef616044a3fdefb": 1,
+        "10740f144756421793e1ecc7520b3129": 1,
+        "9f1840c4855b46c9a4b4169666d21fb9": 12,
+        "8dd20af000ef435ba176edf8bb70c07b": 1,
+        "b82c64ea78a44c36ae8da5918741e9d0": 1,
+        "e67bc8a1676b472a8c9072bebba55248": 1,
+        "4705ae0ce8cd472d93df6896e7645780": 1,
+        "0a54a539de8c4950827a56fa2ac4604e": 1,
+        "dd4872f0dd1046f8aa6aba607b93b45c": 1
+      },
+      "BOM": [],
+      "updateTime": 1649800286,
+      "createTime": 1649796009,
+      "histories": [],
+      "created_at": "2022-04-12 23:40:09",
+      "updated_at": "2022-04-13 00:51:26"
+    }
+  ],
+  "sort": [],
+  "title": "Quadruped On Pico",
+  "foldername": "Quadruped On Pico",
+  "schfilename": "Quadruped On Pico.json",
+  "schfilemtime": 1649800677892
+}
