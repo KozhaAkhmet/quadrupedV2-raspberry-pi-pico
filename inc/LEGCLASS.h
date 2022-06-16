@@ -5,9 +5,9 @@
 
 #define PI 3.14
 
-#define j1 83                                          //Defining Leg`s length in mm
-#define j2 55
-#define j3 33
+#define J1 83                                          //Defining Leg`s length in mm
+#define J2 55
+#define J3 33
 
 
 float map(float x, float in_min, float in_max, float out_min, float out_max);

@@ -14,11 +14,12 @@ set(PICO_CXX_ENABLE_EXCEPTIONS 1)
 pico_sdk_init()
 
 add_executable(main 
-src/main.cpp
-src/NRF24
-src/MYSERVO
-src/MPU6050
-        src/LEGCLASS.cpp inc/LEGCLASS.h)
+        src/main.cpp
+        src/NRF24
+        src/MYSERVO
+        src/MPU6050
+        src/LEGCLASS
+        )
 
 pico_set_program_name(main "main")
 pico_set_program_version(main "0.1")

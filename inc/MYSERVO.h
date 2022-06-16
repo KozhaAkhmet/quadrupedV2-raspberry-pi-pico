@@ -5,7 +5,7 @@ struct Servo{                                                  //Defining Servo 
     public:
     int servoPin;
     float range[2];
-    void init() const;
-    void write(float pusle) const;
+    void init() const ;
+    void write(float pusle) const ;
 };
 #endif

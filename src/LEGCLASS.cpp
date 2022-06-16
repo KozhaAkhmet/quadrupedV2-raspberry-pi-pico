@@ -9,12 +9,12 @@ float map(float x, float in_min, float in_max, float out_min, float out_max)
 
 void Leg::toPos(float posX, float posY, float posZ) {           //Inverse kinematic (Needs Upgrade)
     float al, bet, gam, L, L1;
-    L1 = (float) sqrt(posX * posX + posY * posY);
-    L = (float) sqrt(posZ * posZ + (L1 - j3) * (L1 - j3));
+    L1 = sqrtf(posX * posX + posY * posY);
+    L =  sqrtf(posZ * posZ + (L1 - J3) * (L1 - J3));
 
-    al = (float) (180 * (acos((j1 * j1 - j2 * j2 - L * L) / (-2 * j2 * L)))) / PI + (180 * (acos(posZ / L)) / PI);
-    gam = (float) (((180 * (atan(posX / posY))) / PI + 45));
-    bet = (float) (180 * acos((L * L - j1 * j1 - j2 * j2) / (-2 * j1 * j2))) / PI;
+    al =  ((180 * (acosf((J1 * J1 - J2 * J2 - L * L) / (-2 * J2 * L)))) / PI + (180 * (acosf(posZ / L)) / PI));
+    gam =  (((180 * (atanf(posX / posY))) / PI + 45));
+    bet =  ((180 * acosf((L * L - J1 * J1 - J2 * J2) / (-2 * J1 * J2))) / PI);
 
     lastAng.al = al;
     lastAng.gam = gam;
@@ -36,20 +36,20 @@ void Leg::toAng(float al, float bet , float gam ){
 void Leg::stepCycle(float dis, float omega, float freq){              //Function for stepCycles 
     //get_absolute_time()
     float R = dis/2, tmpx = 60, tmpy = 60, tmpz = 60;
-    float sinus= sin(freq) < 0 ? sin(freq) : 0 ;
+    float sinus = sinf(freq) < 0 ? sinf(freq) : 0 ;
 
-    float x = - R*cos(freq);
+    float x = - R * cosf(freq);
     float y = 0;
     float z = tmpz + (R*1)*sinus;  //Making a half circle on z axis
 
     omega = (omega * PI)/180;       //Converting to radian
 
-    toPos( tmpx + x*cos(omega) - y*sin(omega),  tmpy + x*sin(omega) + y*cos(omega), z);
+    toPos( tmpx + x*cosf(omega) - y*sinf(omega),  tmpy + x*sinf(omega) + y*cosf(omega), z);
 }
 void Leg::slide(float posX, float posY ,float posZ){
     for( float flag = 0; flag <= 2*PI ; flag = flag + PI/4){
         toPos(40,40,60);
-        float R=sqrt((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
+        float R=sqrtf((posX-lastPos.x)*(posX-lastPos.x) + (posY-lastPos.y)*(posY-lastPos.y) + (posZ-lastPos.z)*(posZ-lastPos.z))/2;
         float tmpx = lastPos.x , tmpy =  posY, tmpz = lastPos.z, x,y,z;
         //absolute_time_t time = get_absolute_time();
         //while(!(lastPos.x + R*cos(millis()/500) == posX)){
@@ -57,9 +57,9 @@ void Leg::slide(float posX, float posY ,float posZ){
             //tmpx + R - R*cos(j)
             //get_absolute_time()
             //
-            x = - R*cos(j);
+            x = - R*cosf(j);
             y = 0;
-            toPos( tmpx + x*cos(flag) - y*sin(flag),  tmpy + x*sin(flag) + y*cos(flag),   tmpz);
+            toPos( tmpx + x*cosf(flag) - y*sinf(flag),  tmpy + x*sinf(flag) + y*cosf(flag),   tmpz);
             sleep_ms(100);
         }
         sleep_ms(1000);
