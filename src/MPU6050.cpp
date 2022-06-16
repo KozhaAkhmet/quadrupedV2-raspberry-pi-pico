@@ -1,4 +1,4 @@
-#include "MPU6050/MPU6050.h"
+#include "MPU6050.h"
 #include "hardware/i2c.h"
 
 void mpu6050_reset() {
@@ -12,18 +12,18 @@ uint8_t val = 0x3B;
 i2c_write_blocking(i2c1, addr, &val, sizeof(val), false); 
 i2c_read_blocking(i2c1, addr, buffer, sizeof(buffer), false);
   for (int i = 0; i < 3; i++) {
-    accel[i] = (buffer[i * 2] << 8 | buffer[(i * 2) + 1]);
+    accel[i] = int16_t (buffer[i * 2] << 8 | buffer[(i * 2) + 1]);
   }
 val = 0x43;
 i2c_write_blocking(i2c1, addr, &val, sizeof(val), false); 
 i2c_read_blocking(i2c1, addr, buffer, sizeof(buffer), false);
   for (int i = 0; i < 3; i++) {
-    gyro[i] = (buffer[i * 2] << 8 | buffer[(i * 2) + 1]);;
+    gyro[i] = int16_t (buffer[i * 2] << 8 | buffer[(i * 2) + 1]);
   }
 val = 0x41;
 i2c_write_blocking(i2c1, addr, &val, sizeof(val), false); 
 i2c_read_blocking(i2c1, addr, buffer, sizeof(buffer), false);
 
-*temp = buffer[0] << 8 | buffer[1];
+*temp = int16_t (buffer[0] << 8 | buffer[1]);
 }
  

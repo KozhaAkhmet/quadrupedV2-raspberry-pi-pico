@@ -1,7 +1,8 @@
-#include "MyServo/MYSERVO.h"
+#include "MYSERVO.h"
 #include "hardware/pwm.h"
+#include "hardware/gpio.h"
 
-void Servo::init(){
+void Servo::init() const{
   gpio_set_function(servoPin, GPIO_FUNC_PWM);
   uint slice_num = pwm_gpio_to_slice_num(servoPin);
 
@@ -10,6 +11,6 @@ void Servo::init(){
 
   pwm_set_enabled(slice_num,true);
 }
-void Servo::write(float pulse){                               //Custom Servo control function
-  pwm_set_gpio_level(servoPin, (pulse/20000.f)*39062.f);
+void Servo::write(float pulse) const{
+  pwm_set_gpio_level(servoPin, (uint16_t)((pulse/20000.f)*39062.f));
 }

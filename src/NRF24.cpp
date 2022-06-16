@@ -1,4 +1,4 @@
-#include "nRF24L01/NRF24.h"
+#include "NRF24.h"
 #include "hardware/spi.h"
 #include "hardware/gpio.h"
 #include <string.h>
