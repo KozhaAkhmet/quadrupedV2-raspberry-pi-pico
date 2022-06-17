@@ -4,7 +4,8 @@
       "name": "Linux",
       "includePath": [
         "${workspaceFolder}/**",
-        "${env:PICO_SDK_PATH}/**"
+        "${env:PICO_SDK_PATH}/**",
+        "${env:PICO_SDK_PATH}"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/arm-none-eabi-gcc",

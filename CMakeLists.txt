@@ -31,11 +31,12 @@ target_include_directories(main PUBLIC
 inc/
 )
 
-target_link_libraries(main 
+target_link_libraries(main
 pico_stdlib
 hardware_pwm
 hardware_i2c
 hardware_spi
+        pico_multicore
 )
 
 pico_add_extra_outputs(main)
