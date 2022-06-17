@@ -21,10 +21,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Added Leg class to library.&#10;Code organized.">
-      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+    <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Sorted MPU and NRF test codes&#10;Added balancing function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,7 @@
       <workItem from="1655379164398" duration="26169000" />
       <workItem from="1655489344078" duration="585000" />
       <workItem from="1655489934766" duration="1216000" />
-      <workItem from="1655491157874" duration="5360000" />
+      <workItem from="1655491157874" duration="6223000" />
     </task>
     <task id="LOCAL-00001" summary="Added Leg class to library.&#10;Code organized.">
       <created>1655393982386</created>
@@ -127,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655393982386</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
+      <created>1655496774710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655496774710</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
+      <created>1655496801159</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655496801159</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +188,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Leg class to library.&#10;Code organized." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Leg class to library.&#10;Code organized." />
+    <MESSAGE value="Sorted MPU and NRF test codes&#10;Added balancing function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sorted MPU and NRF test codes&#10;Added balancing function" />
   </component>
 </project>
