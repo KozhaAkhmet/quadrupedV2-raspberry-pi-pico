@@ -1,4 +1,6 @@
 .vscode
+.idea
+.gitignore
 cmake-build-debug
 build/
-../pico-sdk
+
