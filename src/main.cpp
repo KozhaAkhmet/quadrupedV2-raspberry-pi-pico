@@ -9,22 +9,15 @@
 #include "pico/multicore.h"
 #include "cmath"
 
+
 #include "NRF24.h"
 #include "MPU6050.h"
-#include "LEGCLASS.h"
+#include "Motions.h"
 
-void defineServo();
-void walk();
-void defaultPos() ;
-void test();
-void bodyCircularMotion();
-void walkCycle();
-void rotationCycle( bool dir );
-void angleToLegs();
 void MPUTest();
 void NRFTest();
 
-Leg leg[4];
+
 float roll, pitch;
 
 int main() {                                                         //Main Function
@@ -42,144 +35,7 @@ int main() {                                                         //Main Func
         //bodyCircularMotion();
     }
 }
-void defineServo(){
-  int i,j;
-    leg[0].servo[0].servoPin=20;    leg[0].servo[0].range[0]=550.f;   leg[0].servo[0].range[1]=2400.f;    //Between 0-160 degree
-    leg[0].servo[1].servoPin=19;    leg[0].servo[1].range[0]=550.f;   leg[0].servo[1].range[1]=2400.f;
-    leg[0].servo[2].servoPin=18;    leg[0].servo[2].range[0]=550.f;   leg[0].servo[2].range[1]=2400.f;
 
-    leg[1].servo[0].servoPin=9;     leg[1].servo[0].range[0]=2400.f;  leg[1].servo[0].range[1]=550.f;
-    leg[1].servo[1].servoPin=10;    leg[1].servo[1].range[0]=2400.f;  leg[1].servo[1].range[1]=550.f;
-    leg[1].servo[2].servoPin=11;    leg[1].servo[2].range[0]=2400.f;  leg[1].servo[2].range[1]=550.f;    //Between 0-180
-
-    leg[2].servo[0].servoPin=28;    leg[2].servo[0].range[0]=2400.f;  leg[2].servo[0].range[1]=550.f;    //0-180
-    leg[2].servo[1].servoPin=22;    leg[2].servo[1].range[0]=2400.f;  leg[2].servo[1].range[1]=550.f;    //0-160
-    leg[2].servo[2].servoPin=21;    leg[2].servo[2].range[0]=2400.f;  leg[2].servo[2].range[1]=550.f;    //0-160
-
-    leg[3].servo[0].servoPin=0;     leg[3].servo[0].range[0]=550.f;   leg[3].servo[0].range[1]=2400.f;   //0-160
-    leg[3].servo[1].servoPin=1;     leg[3].servo[1].range[0]=550.f;   leg[3].servo[1].range[1]=2400.f;  //0-160
-    leg[3].servo[2].servoPin=8;     leg[3].servo[2].range[0]=550.f;   leg[3].servo[2].range[1]=2400.f;  //0-160
-    for(i=0; i<4 ; i++)
-      for(j=0 ; j<3 ; j++)
-        leg[i].servo[j].init();
-}
-
-void defaultPos() {                                                 //Default leg positions
-  for(int i=0; i<4 ; i++){
-    leg[i].toPos(60,60,60);
-  }
-}
-
-void bodyMove(float posx, float posy, float posz) {                       //Body displacement
-  leg[0].toPos(40 + posx, 40 - posy, posz);
-  leg[1].toPos(40 - posx, 40 - posy, posz);
-  leg[2].toPos(40 + posx, 40 + posy, posz);
-  leg[3].toPos(40 - posx, 40 + posy, posz);
-}
-
-void walk() {                                                       //Manuel Walking gait (On Procsess..)
-  int vel =500;
-  leg[3].toPos(40, 20, 40);
-  sleep_ms(vel);
-  leg[3].toPos(40, 20, 60);
-  sleep_ms(vel);
-  leg[1].toPos(40, 120, 0);
-  sleep_ms(vel);
-  leg[1].toPos(40, 120, 60);
-  sleep_ms(vel);
-  leg[0].toPos(40, 20, 60);
-  leg[1].toPos(40, 70, 60);
-  leg[2].toPos(40, 120, 60);
-  leg[3].toPos(40, 70, 60);
-  sleep_ms(vel);
-  leg[2].toPos(40, 20, 40);
-  sleep_ms(vel);
-  leg[2].toPos(40, 20, 60);
-  sleep_ms(vel);
-  leg[0].toPos(40, 120, 0);
-  sleep_ms(vel);
-  leg[0].toPos(40, 120, 60);
-  sleep_ms(vel);
-  leg[3].toPos(40, 20, 40);
-  sleep_ms(vel);
-  leg[3].toPos(40, 20, 60);
-  sleep_ms(vel);
-  leg[0].toPos(40, 70, 60);
-  leg[1].toPos(40, 20, 60);
-  leg[2].toPos(40, 70, 60);
-  leg[3].toPos(40, 20, 60);
-  sleep_ms(vel);
-}
-
-void test(){
-  int i,j;
-  for( i=0 ; i<4 ; i++)
-    for(j=40 ; j<80 ; j++){
-    leg[i].toPos(40,40,j);
-   // sleep_ms(50);
-    }
-  for( i=0 ; i<4 ; i++)
-    for(j=80 ; j>40 ; j--){
-    leg[i].toPos(40,40,j);
-    //sleep_ms(50);
-    }
-  for( i=0 ; i<4 ; i++)
-    for(j=40 ; j<80 ; j++){
-    leg[i].toPos(40,40,j);
-    //sleep_ms(50);
-  }
-  for(j=80 ; j>40 ; j--){
-    leg[0].toPos(40,40,j);
-    leg[1].toPos(40,40,j);
-    leg[2].toPos(40,40,j);
-    leg[3].toPos(40,40,j);
-   // sleep_ms(50);
-  }
-  for(float j=0 ; j < (2*PI) ; j=j+0.1){
-    bodyMove(20*sinf(j),0,60);
-    //sleep_ms(50);
-  }
-}
-
-void bodyCircularMotion(){
-  for(double j=0 ; j < (2*PI) ; j=j+0.1){
-    bodyMove(20*sin(j),20*cos(j),60);
-    sleep_ms(50);
-  }
-}
-
-void walkCycle(){
-  double angle = 0;
-
-  for( double  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
-
-  leg[0].stepCycle( 70 ,   angle + 90   , freq     );
-  leg[1].stepCycle( 70 , - angle + 90   , freq + PI);
-  leg[2].stepCycle( 70 , - angle - 90   , freq + PI);
-  leg[3].stepCycle( 70 ,   angle + 270  , freq     );
-
-  sleep_ms(15);
-  }
-}
-
-void rotationCycle( bool dir ){
-  double angle = 0;
-
-  if( dir == 1 )
-    angle = -135;
-  else  
-    angle = 45;
-
-  for( double  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
-
-  leg[0].stepCycle( 70 ,   angle + 90  , freq     );
-  leg[1].stepCycle( 70 , - angle       , freq + PI);
-  leg[2].stepCycle( 70 , - angle       , freq + PI);
-  leg[3].stepCycle( 70 ,   angle + 90  , freq     );
-
-  sleep_ms(40);
-  }
-}
 
 void NRFTest() {
     uint8_t addr[6] = "Node1";
@@ -221,6 +77,7 @@ void MPUTest(){
 
     defineServo();
     defaultPos();
+    float offset = 20;
     while (1) {
 
         pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2]))*180.0)/PI;
@@ -231,11 +88,16 @@ void MPUTest(){
         printf("Angles. Roll = %6.2f, Pitch = %6.2f\n",roll , pitch);
         mpu6050_reset();
 
-        sleep_ms(200);
+        sleep_ms(180 + offset * 1.3);
         for (int i = 0; i <= 3; ++i) {
             float y = leg[i].lastPos.y,
                     z = leg[i].lastPos.z;
-            leg[i].toPos(60, 60, 60 / tanf((PI / 3 + roll * powf(-1,i))));
+            leg[i].toPos( Vector(60, 60, offset + 60 /
+            tanf(
+                    (PI / 3 + roll * powf(-1,i))
+                    ) / (PI/2)
+                          )
+            );
         }
     }
 

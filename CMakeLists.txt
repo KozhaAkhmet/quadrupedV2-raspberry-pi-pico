@@ -7,37 +7,37 @@ set(PICO_SDK_PATH "~/pico/pico-sdk")
 
 include(pico_sdk_import.cmake)
 
-project(main C CXX ASM)
+project(QuadrupedV2 C CXX ASM)
 
 set(PICO_CXX_ENABLE_EXCEPTIONS 1)
 
 pico_sdk_init()
 
-add_executable(main 
+add_executable(QuadrupedV2
         src/main.cpp
         src/NRF24
-        src/MYSERVO
+        src/Servo
         src/MPU6050
-        src/LEGCLASS
+        src/LegClass
         )
 
-pico_set_program_name(main "main")
-pico_set_program_version(main "0.1")
+pico_set_program_name(QuadrupedV2 "QuadrupedV2")
+pico_set_program_version(QuadrupedV2 "0.1")
 
-pico_enable_stdio_uart(main 0)
-pico_enable_stdio_usb(main 1)
+pico_enable_stdio_uart(QuadrupedV2 0)
+pico_enable_stdio_usb(QuadrupedV2 1)
 
-target_include_directories(main PUBLIC 
-inc/
-)
+target_include_directories(QuadrupedV2 PUBLIC
+        inc/
+        )
 
-target_link_libraries(main
-pico_stdlib
-hardware_pwm
-hardware_i2c
-hardware_spi
+target_link_libraries(QuadrupedV2
+        pico_stdlib
+        hardware_pwm
+        hardware_i2c
+        hardware_spi
         pico_multicore
-)
+        )
 
-pico_add_extra_outputs(main)
+pico_add_extra_outputs(QuadrupedV2)
 
