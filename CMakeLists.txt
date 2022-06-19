@@ -15,10 +15,10 @@ pico_sdk_init()
 
 add_executable(QuadrupedV2
         src/main.cpp
-        src/NRF24
-        src/Servo
-        src/MPU6050
-        src/LegClass
+        src/MPU6050.cpp
+        src/Servo.cpp
+        src/MPU6050.cpp
+        src/LegClass.cpp
         )
 
 pico_set_program_name(QuadrupedV2 "QuadrupedV2")

@@ -1,4 +1,4 @@
-#include "MYSERVO.h"
+#include "Servo.h"
 #include "hardware/pwm.h"
 #include "hardware/gpio.h"
 

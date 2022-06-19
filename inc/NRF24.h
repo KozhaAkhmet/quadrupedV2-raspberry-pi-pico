@@ -1,6 +1,6 @@
 
-#ifndef __NRF24_H_
-#define __NRF24_H_
+#ifndef QUADRUPEDV2__NRF24_H_
+#define QUADRUPEDV2__NRF24_H_
 #include "hardware/spi.h"
 #include "hardware/gpio.h"
 
@@ -11,8 +11,6 @@ private: // Vars.
     uint16_t csn;
     uint16_t ce;
 
-public: // Vars.
-    //TODO: Add public vars.
 private: // Funcs.
     void csnLow(){ gpio_put(csn, 0);}
     void csnHigh(){ gpio_put(csn, 1);}

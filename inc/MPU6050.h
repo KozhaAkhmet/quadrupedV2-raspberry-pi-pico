@@ -1,5 +1,5 @@
-#ifndef __MPU6050_H_
-#define __MPU6050_H_
+#ifndef QUADRUPEDV2__MPU6050_H_
+#define QUADRUPEDV2__MPU6050_H_
 #include "hardware/i2c.h"
 
 

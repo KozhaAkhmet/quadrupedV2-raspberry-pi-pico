@@ -21,7 +21,7 @@ void NRFTest();
 float roll, pitch;
 
 int main() {                                                         //Main Function
-    //multicore_launch_core1(walkCycle);
+    //multicore_launch_core1(walkCycle); todo reorganize multicore
 
     MPUTest();
 
@@ -42,7 +42,7 @@ void NRFTest() {
     NRF24 nrf(spi0, 16, 17);
     nrf.config();
     nrf.modeTX();
-
+    //todo fix address. Can`t recognize controller address.
     char buffer[32];
     while (1) {
         sprintf(buffer, "60");
@@ -61,6 +61,7 @@ void NRFTest() {
 }
 
 void MPUTest(){
+    //todo merge MPU6050 lib with new roll, pitch calculation functions.
     stdio_init_all();
     //printf("Hello, MPU6050! Reading raw data from registers...\n");
 

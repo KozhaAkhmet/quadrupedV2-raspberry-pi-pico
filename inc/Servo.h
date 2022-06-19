@@ -1,5 +1,5 @@
-#ifndef __MYSERVO_H_
-#define __MYSERVO_H_
+#ifndef QUADRUPEDV2__MYSERVO_H_
+#define QUADRUPEDV2__MYSERVO_H_
 
 struct Servo{                                                  //Defining Servo class
     public:

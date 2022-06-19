@@ -8,37 +8,29 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="main" targetName="main" />
-      <config projectName="main" targetName="bs2_default" />
-      <config projectName="main" targetName="bs2_default_bin" />
-      <config projectName="main" targetName="bs2_default_padded_checksummed_asm" />
-      <config projectName="main" targetName="ELF2UF2Build" />
+      <config projectName="QuadrupedV2" targetName="bs2_default" />
+      <config projectName="QuadrupedV2" targetName="bs2_default_padded_checksummed_asm" />
+      <config projectName="QuadrupedV2" targetName="bs2_default_bin" />
+      <config projectName="QuadrupedV2" targetName="ELF2UF2Build" />
+      <config projectName="QuadrupedV2" targetName="QuadrupedV2" />
     </generated>
   </component>
-  <component name="CMakeSettings" AUTO_RELOAD="true">
+  <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" NO_GENERATOR="true" />
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" GENERATION_OPTIONS="-G Ninja" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Sorted MPU and NRF test codes&#10;Added balancing function">
-      <change afterPath="$PROJECT_DIR$/inc/Matrix.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/Motions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LegClass.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Readded dissapeared folders.&#10;Added descriptions to LegClass.&#10;Added todos.">
       <change beforePath="$PROJECT_DIR$/.idea/QuadrupedV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QuadrupedV2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/LEGCLASS.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/LegClass.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/LEGCLASS.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/MPU6050.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/MPU6050.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/MYSERVO.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Servo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/MYSERVO.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/NRF24.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/NRF24.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LEGCLASS.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MYSERVO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servo.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MYSERVO.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
@@ -50,6 +42,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -57,6 +50,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
@@ -79,31 +73,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cmake.loaded.for.project&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/sk8/Documents/Projects/QuadrupedV2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "cmake.loaded.for.project": "true",
+    "last_opened_file_path": "/home/sk8/pico/pico-sdk",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "build.tools",
+    "structure.view.defaults.are.configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inc" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" RUN_PATH="$PROJECT_DIR$/CMakeLists.txt" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="QuadrupedV2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="QuadrupedV2" TARGET_NAME="QuadrupedV2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QuadrupedV2" RUN_TARGET_NAME="QuadrupedV2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -134,13 +134,7 @@
       <workItem from="1655379164398" duration="26169000" />
       <workItem from="1655489344078" duration="585000" />
       <workItem from="1655489934766" duration="1216000" />
-      <workItem from="1655491157874" duration="7248000" />
-      <workItem from="1655539553507" duration="921000" />
-      <workItem from="1655545344268" duration="752000" />
-      <workItem from="1655546102415" duration="3657000" />
-      <workItem from="1655553768230" duration="1762000" />
-      <workItem from="1655556289104" duration="703000" />
-      <workItem from="1655637974487" duration="7462000" />
+      <workItem from="1655491157874" duration="5360000" />
     </task>
     <task id="LOCAL-00001" summary="Added Leg class to library.&#10;Code organized.">
       <created>1655393982386</created>
@@ -149,42 +143,7 @@
       <option name="project" value="LOCAL" />
       <updated>1655393982386</updated>
     </task>
-    <task id="LOCAL-00002" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
-      <created>1655496774710</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1655496774710</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
-      <created>1655496801159</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1655496801159</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
-      <created>1655497422593</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1655497422593</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
-      <created>1655497710208</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1655497710208</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Sorted MPU and NRF test codes&#10;Added balancing function">
-      <created>1655497749068</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1655497749068</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +154,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
         <entry key="f7e8751a-f572-4a68-9e14-a86dde8b8725">
@@ -233,7 +209,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Leg class to library.&#10;Code organized." />
-    <MESSAGE value="Sorted MPU and NRF test codes&#10;Added balancing function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorted MPU and NRF test codes&#10;Added balancing function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Leg class to library.&#10;Code organized." />
   </component>
 </project>
