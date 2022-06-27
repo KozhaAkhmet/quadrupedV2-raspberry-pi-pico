@@ -26,4 +26,28 @@ i2c_read_blocking(i2c1, addr, buffer, sizeof(buffer), false);
 
 *temp =  int16_t (buffer[0] << 8 | buffer[1]);
 }
+
+#include "cmath"
+#include "pico/stdio.h"
+#include "hardware/i2c.h"
+#include "hardware/gpio.h"
+
+void MPU6050::initMPU() {
+    stdio_init_all();
+
+    i2c_init(i2c1, 100 * 1000);
+    gpio_set_function(15, GPIO_FUNC_I2C);
+    gpio_set_function(14, GPIO_FUNC_I2C);
+    gpio_pull_up(15);
+    gpio_pull_up(14);
+
+    mpu6050_reset();
+}
+
+double MPU6050::getRoll(){
+    return atanf( - acceleration[0] / sqrtf( acceleration[1] * acceleration[1] + acceleration[2] * acceleration[2] ) );
+}
+double MPU6050::getPitch() {
+    return atanf( - acceleration[1] / sqrtf( acceleration[0] * acceleration[0] + acceleration[2] * acceleration[2] ) );
+}
  

@@ -7,8 +7,8 @@ public:
     float y;
     float z;
 
-    Vector(){};
-    Vector(float input){
+    Vector()= default;
+    explicit Vector(float input){
         x = input;
         y = input;
         z = input;
@@ -25,8 +25,8 @@ public:
     float bet;
     float gam;
 
-    Angle(){};
-    Angle(float input){
+    Angle()= default;;
+    explicit Angle(float input){
         al = input;
         bet = input;
         gam = input;

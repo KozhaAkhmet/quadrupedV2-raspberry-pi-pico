@@ -24,4 +24,4 @@ public:
     void slide(Vector targetPos);
 };
 
-#endif //MAIN_LEGCLASS_H
+#endif //QUADRUPEDV2_LEGCLASS_H

@@ -89,26 +89,31 @@ void walk() {                                                       //Manuel Wal
 */
 void test(){
     int i,j;
+    Vector def(40);
     for( i=0 ; i<4 ; i++)
         for(j=40 ; j<80 ; j++){
-            leg[i].toPos(Vector(40,40,j));
+            def.z = j;
+            leg[i].toPos(def);
             // sleep_ms(50);
         }
     for( i=0 ; i<4 ; i++)
         for(j=80 ; j>40 ; j--){
-            leg[i].toPos(Vector(40,40,j));
+            def.z = j;
+            leg[i].toPos(def);
             //sleep_ms(50);
         }
     for( i=0 ; i<4 ; i++)
         for(j=40 ; j<80 ; j++){
-            leg[i].toPos(Vector(40,40,j));
+            def.z = j;
+            leg[i].toPos(def);
             //sleep_ms(50);
         }
     for(j=80 ; j>40 ; j--){
-        leg[0].toPos(Vector(40,40,j));
-        leg[1].toPos(Vector(40,40,j));
-        leg[2].toPos(Vector(40,40,j));
-        leg[3].toPos(Vector(40,40,j));
+        def.z = j;
+        leg[0].toPos(def);
+        leg[1].toPos(def);
+        leg[2].toPos(def);
+        leg[3].toPos(def);
         // sleep_ms(50);
     }
     for(float j=0 ; j < (2*PI) ; j=j+0.1){
@@ -118,16 +123,16 @@ void test(){
 }
 
 void bodyCircularMotion(){
-    for(double j=0 ; j < (2*PI) ; j=j+0.1){
-        bodyMove(Vector(20*sin(j),20*cos(j),60));
+    for(float j=0 ; j < (2*PI) ; j=j+0.1){
+        bodyMove(Vector(20*sinf(j),20*cosf(j),60));
         sleep_ms(50);
     }
 }
 
 void walkCycle(){
-    double angle = 0;
+    float angle = 0;
 
-    for( double  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
+    for( float  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
 
         leg[0].stepCycle( 70 ,   angle + 90   , freq     );
         leg[1].stepCycle( 70 , - angle + 90   , freq + PI);
@@ -144,19 +149,19 @@ void walkCycle(){
  * @param dir
  */
 void rotationInPlace( bool dir ){
-    double angle = 0;
+    float angle = 0;
 
     if( dir == 1 )
         angle = -135;
     else
         angle = 45;
 
-    for( double  freq ; freq > freq - 2*PI ; freq = freq - 0.1){
+    for( float freq ; freq > freq - 2*PI ; freq = freq - 0.1){
 
-        leg[0].stepCycle( 70 ,   angle + 90  , freq     );
-        leg[1].stepCycle( 70 , - angle       , freq + PI);
-        leg[2].stepCycle( 70 , - angle       , freq + PI);
-        leg[3].stepCycle( 70 ,   angle + 90  , freq     );
+        leg[0].stepCycle( 70 ,   (float)   angle + 90  ,      freq     );
+        leg[1].stepCycle( 70 ,   (float) - angle       , freq + PI);
+        leg[2].stepCycle( 70 ,   (float) - angle       , freq + PI);
+        leg[3].stepCycle( 70 ,   (float)   angle + 90  ,      freq     );
 
         sleep_ms(40);
     }
