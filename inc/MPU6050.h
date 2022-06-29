@@ -10,7 +10,7 @@ void mpu6050_read_raw(int16_t accel[3], int16_t gyro[3], int16_t *temp) ;
 
 class MPU6050{
 public:
-    int16_t acceleration[3], gyroscope[3];
+    int16_t acceleration[3], gyroscope[3],temp;
     void initMPU();
     double getRoll();
     double getPitch();
