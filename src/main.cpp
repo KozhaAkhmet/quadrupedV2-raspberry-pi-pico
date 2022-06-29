@@ -17,7 +17,7 @@
 void MPUTest();
 
 [[maybe_unused]] void NRFTest();
-float TanjentWithBound(float roll, int i, float bound);
+
 
 
 float roll = 0, pitch;
@@ -34,7 +34,7 @@ int main() {                                                         //Main Func
         //walkCycle();
         //rotationCycle(1)
         //walkCycle();
-        //bodyCircularMotion();
+        //rotateBody();
     }
 }
 
@@ -76,14 +76,19 @@ void MPUTest(){
 
     int16_t acceleration[3], gyro[3], temp;
 
-//    defineServo();
-//    defaultPos();
+
+    //printf("Acc. X = %6.2d, Y = %6.2d, Z = %6.2d ", acceleration[0], acceleration[1],acceleration[2]);
+    //printf("Angles. Roll = %6.2f, Pitch = %6.2f\n",roll , pitch);
+    mpu6050_reset();
+
+    defineServo();
+
 
     float offset = 20;
 
     double past;
-    double integral;
-    double intConst = 0.00001;
+    double integral = 0;
+    double intConst = 1;
 
     double present;
     double error;
@@ -102,6 +107,7 @@ void MPUTest(){
     int skip = 0;
 
     while (1) {
+        mpu6050_read_raw(acceleration, gyro, &temp);
 
         roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
         pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2])));
@@ -112,44 +118,28 @@ void MPUTest(){
         integral += error;
         past = intConst * integral;
 
-
-        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
-//        rollAcc = atanf( - gyro[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
-
-//        derivative = ( last - now ) / (double) absolute_time_diff_us(lastTime,get_absolute_time());
         derivative = gyro[0];
         future = derConst * derivative;
 
         errorSum = present  ;
 
+        printf("Error sum: %.3f Future: %.3f Present: %.3f Past: %.3f \n", errorSum , future, present, past );
+        printf("Roll: %.3f Gyro: %.3hd Accel: %.3hd \n", roll , gyro[0], acceleration[0] );
 
+        for (int i = 0; i <= 3; ++i) {
+            float y = leg[i].lastPos.y,
+                    z = leg[i].lastPos.z;
+            //todo use PID intead of bound;
+            leg[i].toPos( Vector(60, 60, offset + 60 /
+            //tanf( TanjentWithBound( roll, i, 0.5 ) ) )
+            tanf(PI / 3 + (errorSum) * powf(-1 , i)) )
+            );
+        }
 
-        mpu6050_read_raw(acceleration, gyro, &temp);
-        //printf("Acc. X = %6.2d, Y = %6.2d, Z = %6.2d ", acceleration[0], acceleration[1],acceleration[2]);
-        //printf("Angles. Roll = %6.2f, Pitch = %6.2f\n",roll , pitch);
         mpu6050_reset();
-
-
-        printf("Error sum: %.3Lf Future: %.3f Present: %.3f Past: %.3f \n", errorSum , future, present, past );
-//        for (int i = 0; i <= 3; ++i) {
-//            float y = leg[i].lastPos.y,
-//                    z = leg[i].lastPos.z;
-//            //todo use PID intead of bound;
-//            leg[i].toPos( Vector(60, 60, offset + 60 /
-//            //tanf( TanjentWithBound( roll, i, 0.5 ) ) )
-//            tanf(PI / 3 + (errorSum) * powf(-1 , i)) )
-//            );
-//        }
         sleep_ms(150 );
     }
-
-
 }
-//float TanjentWithBound(float roll, int i , float bound){
-//    float al = PI / 3 + roll * powf(-1 , i);
-//    if(tanf(al) - bound <= tanf(al) && tanf(al) <= tanf(al) + bound )
-//        return tanf(al);
-//}
 
 
 

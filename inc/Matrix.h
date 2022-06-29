@@ -1,5 +1,8 @@
 #ifndef QUADRUPEDV2_VECTOR_H
 #define QUADRUPEDV2_VECTOR_H
+/**
+ * Simple Matrix Variables
+ */
 
 class Vector{
 public:

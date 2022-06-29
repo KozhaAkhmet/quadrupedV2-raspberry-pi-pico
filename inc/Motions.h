@@ -11,9 +11,9 @@ Leg leg[4];
 
 void defineServo();
 void walk();
-void defaultPos() ;
+void resetPos() ;
 void test();
-void bodyCircularMotion();
+void rotateBody();
 void walkCycle();
 void rotationCycle( bool dir );
 void angleToLegs();
@@ -40,13 +40,13 @@ void defineServo(){
             leg[i].servo[j].init();
 }
 
-void defaultPos() {                                                 //Default leg positions
+void resetPos() {                                                 //Default leg positions
     for(int i=0; i<4 ; i++){
         leg[i].toPos(Vector(60,60,60));
     }
 }
 
-void bodyMove(Vector pos) {                       //Body displacement
+void moveBody(Vector pos) {                       //Body displacement
     leg[0].toPos(Vector( + pos.x, 40 - pos.y, pos.z));
     leg[1].toPos(Vector( - pos.x, 40 - pos.y, pos.z));
     leg[2].toPos(Vector( + pos.x, 40 + pos.y, pos.z));
@@ -117,14 +117,14 @@ void test(){
         // sleep_ms(50);
     }
     for(float j=0 ; j < (2*PI) ; j=j+0.1){
-        bodyMove(Vector(20*sinf(j),0,60));
+        moveBody(Vector(20*sinf(j),0,60));
         //sleep_ms(50);
     }
 }
 
-void bodyCircularMotion(){
+void rotateBody(){
     for(float j=0 ; j < (2*PI) ; j=j+0.1){
-        bodyMove(Vector(20*sinf(j),20*cosf(j),60));
+        moveBody(Vector(20*sinf(j),20*cosf(j),60));
         sleep_ms(50);
     }
 }
@@ -148,7 +148,7 @@ void walkCycle(){
  * Rotates in place. If dir 1 turns right else left.
  * @param dir
  */
-void rotationInPlace( bool dir ){
+void rotateAround(bool dir ){
     float angle = 0;
 
     if( dir == 1 )

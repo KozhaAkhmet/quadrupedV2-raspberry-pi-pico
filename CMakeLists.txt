@@ -19,7 +19,7 @@ add_executable(QuadrupedV2
         src/Servo.cpp
         src/MPU6050.cpp
         src/LegClass.cpp
-        src/Balancing.cpp
+        src/PID.cpp
         )
 
 pico_set_program_name(QuadrupedV2 "QuadrupedV2")
