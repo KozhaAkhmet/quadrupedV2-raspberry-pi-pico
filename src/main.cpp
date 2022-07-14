@@ -18,14 +18,17 @@ void MPUTest();
 
 [[maybe_unused]] void NRFTest();
 double Bounds(double input, double min , double max);
+void Balance();
 
+MPU6050 mpu;
 
-float roll = 0, pitch;
+void core1(){
+    MPUTest();
+};
 
 int main() {                                                         //Main Function
-    //multicore_launch_core1(walkCycle); todo reorganize multicore
 
-    MPUTest();
+    multicore_launch_core1(core1);
 
     while (true) {
         //walk();
@@ -35,8 +38,10 @@ int main() {                                                         //Main Func
         //rotationCycle(1)
         //walkCycle();
         //rotateBody();
+
     }
 }
+
 
 
 void NRFTest() {
@@ -63,15 +68,10 @@ void NRFTest() {
 }
 
 void MPUTest(){
-    MPU6050 mpu;
+    //todo kalman filter for MPU6050
     mpu.initMPU();
 
     int16_t acceleration[3], gyro[3], temp;
-
-    defineServo();
-
-
-    float offset = 20;
 
     double past;
     double integral = 0;
@@ -99,55 +99,60 @@ void MPUTest(){
     double AngleX ,AngleY ,AngleZ ,x_accel;
 
 
+
     while (1) {
         mpu.readRaw(acceleration, gyro, &temp);
 
-
-
-        gyroAngleX = acceleration[0] /131 * delT + gyroAngleX;
-        gyroAngleY = gyro[1] /131 * delT + gyroAngleY;
-        gyroAngleZ = gyro[2] /131 * delT + gyroAngleZ;
+//        gyroAngleX = acceleration[0] /131 * delT + gyroAngleX;
+//        gyroAngleY = gyro[1] /131 * delT + gyroAngleY;
+//        gyroAngleZ = gyro[2] /131 * delT + gyroAngleZ;
 
 //        AngleX = al * gyroAngleX + (1 - al) * acceleration[0];
 //        AngleY = al * gyroAngleY + (1 - al) * acceleration[1];
 //        AngleZ = gyroAngleZ;
 //        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
-        pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2]))) / 180 * PI;
+//        pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2]))) / 180 * PI;
 
-        roll = al * gyroAngleX + (1 - al) * pitch;
+//        roll = al * gyroAngleX + (1 - al) * pitch;
 
         //filtered angle
 
 
+        mpu.calculateAverageAcceleration();
+        mpu.calculateAverageGyro();
 
-        error = ( - roll ) ;
+        error = ( - mpu.getRoll() ) ;
         present =  Bounds(errorConst * error , -0.001, 0.001);
 
         integral += error;
         past = Bounds(intConst * integral , -0.01, 0.01);
-
 
         derivative = gyro[0];
         future = Bounds( derConst * derivative , -0.1, 0.1);
 
         errorSum =  future;
 
-        printf("sum: %.3f Future: %.3f Present: %.3f Past: %.3f \n", roll  , future, present, past );
+        printf("sum: %.3f Future: %.3f Present: %.3f Past: %.3f \n", mpu.getRoll() , future, present, past );
 //        printf("Roll: %.3f Gyro: %.3hd Accel: %.3hd \n", roll , gyro[0], acceleration[0] );
-        float z;
-        for (int i = 0; i <= 3; ++i) {
-            z = offset + 60 / tanf(PI / 3 + ( roll  ) * powf(-1 , i));
-            //todo kalman filter for MPU6050
-            //todo compute MPU data without sleep_ms but with delayed toPos function
 
-            leg[i].toPos( Vector(60, 60, z ));
-        }
 
         mpu.reset();
-        sleep_ms(100 );
+
     }
+}
 
+void Balance(){
 
+    float offset = 20;
+    float z;
+
+    defineServo();
+
+    for (int i = 0; i <= 3; ++i) {
+        z = offset + 60 / tanf(PI / 3 + (   ) * powf(-1 , (float) i));
+        leg[i].toPos( Vector(60, 60, z ));
+    }
+    sleep_ms(100 );
 }
 
 double Bounds(double *input, const double min , const double max){

@@ -21,11 +21,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Created PID library (Updating 1).&#10;Created upload.sh script for automation upload process.">
+    <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Upgraded MPU6050 library &#10;created MPU6050 class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/LegClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/LegClass.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/MPU6050.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/MPU6050.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LegClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LegClass.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MPU6050.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MPU6050.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
@@ -138,7 +136,7 @@
       <workItem from="1656515546183" duration="7207000" />
       <workItem from="1656582997179" duration="8153000" />
       <workItem from="1657201409544" duration="85000" />
-      <workItem from="1657813776249" duration="2558000" />
+      <workItem from="1657813776249" duration="6508000" />
     </task>
     <task id="LOCAL-00001" summary="Added Leg class to library.&#10;Code organized.">
       <created>1655393982386</created>
@@ -161,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656514507379</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Upgraded MPU6050 library &#10;created MPU6050 class">
+      <created>1657833990449</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657833990449</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +234,7 @@
     <MESSAGE value="Added Leg class to library.&#10;Code organized." />
     <MESSAGE value="Merged MPU6050 functions with own library" />
     <MESSAGE value="Created PID library (Updating 1).&#10;Created upload.sh script for automation upload process." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created PID library (Updating 1).&#10;Created upload.sh script for automation upload process." />
+    <MESSAGE value="Upgraded MPU6050 library &#10;created MPU6050 class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgraded MPU6050 library &#10;created MPU6050 class" />
   </component>
 </project>
