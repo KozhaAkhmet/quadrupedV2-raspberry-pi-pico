@@ -21,7 +21,7 @@ public:
     void toPos(Vector pos);
     void toAng(Angle ang);
     void stepCycle(float dis, float omega, float freq);
-    void slide(Vector targetPos);
+    void slide(Vector *targetPos);
 };
 
 #endif //QUADRUPEDV2_LEGCLASS_H

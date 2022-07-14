@@ -23,7 +23,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="Created PID library (Updating 1).&#10;Created upload.sh script for automation upload process.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/LegClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/LegClass.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/MPU6050.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/MPU6050.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LegClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LegClass.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MPU6050.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MPU6050.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +135,10 @@
       <workItem from="1656336039626" duration="6500000" />
       <workItem from="1656449177718" duration="6991000" />
       <workItem from="1656507191309" duration="2359000" />
+      <workItem from="1656515546183" duration="7207000" />
+      <workItem from="1656582997179" duration="8153000" />
+      <workItem from="1657201409544" duration="85000" />
+      <workItem from="1657813776249" duration="2558000" />
     </task>
     <task id="LOCAL-00001" summary="Added Leg class to library.&#10;Code organized.">
       <created>1655393982386</created>

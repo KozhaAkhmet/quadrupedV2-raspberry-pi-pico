@@ -17,7 +17,7 @@
 void MPUTest();
 
 [[maybe_unused]] void NRFTest();
-
+double Bounds(double input, double min , double max);
 
 
 float roll = 0, pitch;
@@ -63,23 +63,10 @@ void NRFTest() {
 }
 
 void MPUTest(){
-    //todo merge MPU6050 lib with new roll, pitch calculation functions.
-    stdio_init_all();
-
-    i2c_init(i2c1, 100 * 1000);
-    gpio_set_function(15, GPIO_FUNC_I2C);
-    gpio_set_function(14, GPIO_FUNC_I2C);
-    gpio_pull_up(15);
-    gpio_pull_up(14);
-
-    mpu6050_reset();
+    MPU6050 mpu;
+    mpu.initMPU();
 
     int16_t acceleration[3], gyro[3], temp;
-
-
-    //printf("Acc. X = %6.2d, Y = %6.2d, Z = %6.2d ", acceleration[0], acceleration[1],acceleration[2]);
-    //printf("Angles. Roll = %6.2f, Pitch = %6.2f\n",roll , pitch);
-    mpu6050_reset();
 
     defineServo();
 
@@ -88,58 +75,84 @@ void MPUTest(){
 
     double past;
     double integral = 0;
-    double intConst = 1;
+    double intConst = 0.0001;
 
     double present;
     double error;
-    double errorConst = 0.5;
+    double errorConst = 0.05;
 
     double future;
     double derivative;
     double last;
     double now;
-    double derConst = 0.001;
+    double derConst = 0.000003;
 
 
     absolute_time_t lastTime;
     long double errorSum;
-    float bound = 0.2;
     int skip = 0;
 
+    double t = get_absolute_time() , delT = 0.04, al = 0.96 ,
+            gyroAngleX = 0 , gyroAngleY = 0 , gyroAngleZ = 0;
+
+
+    double AngleX ,AngleY ,AngleZ ,x_accel;
+
+
     while (1) {
-        mpu6050_read_raw(acceleration, gyro, &temp);
+        mpu.readRaw(acceleration, gyro, &temp);
 
-        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
-        pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2])));
 
-        error = ( 0 - roll ) ;
-        present = errorConst * error;
+
+        gyroAngleX = acceleration[0] /131 * delT + gyroAngleX;
+        gyroAngleY = gyro[1] /131 * delT + gyroAngleY;
+        gyroAngleZ = gyro[2] /131 * delT + gyroAngleZ;
+
+//        AngleX = al * gyroAngleX + (1 - al) * acceleration[0];
+//        AngleY = al * gyroAngleY + (1 - al) * acceleration[1];
+//        AngleZ = gyroAngleZ;
+//        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
+        pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2]))) / 180 * PI;
+
+        roll = al * gyroAngleX + (1 - al) * pitch;
+
+        //filtered angle
+
+
+
+        error = ( - roll ) ;
+        present =  Bounds(errorConst * error , -0.001, 0.001);
 
         integral += error;
-        past = intConst * integral;
+        past = Bounds(intConst * integral , -0.01, 0.01);
+
 
         derivative = gyro[0];
-        future = derConst * derivative;
+        future = Bounds( derConst * derivative , -0.1, 0.1);
 
-        errorSum = present  ;
+        errorSum =  future;
 
-        printf("Error sum: %.3f Future: %.3f Present: %.3f Past: %.3f \n", errorSum , future, present, past );
-        printf("Roll: %.3f Gyro: %.3hd Accel: %.3hd \n", roll , gyro[0], acceleration[0] );
-
+        printf("sum: %.3f Future: %.3f Present: %.3f Past: %.3f \n", roll  , future, present, past );
+//        printf("Roll: %.3f Gyro: %.3hd Accel: %.3hd \n", roll , gyro[0], acceleration[0] );
+        float z;
         for (int i = 0; i <= 3; ++i) {
-            float y = leg[i].lastPos.y,
-                    z = leg[i].lastPos.z;
-            //todo use PID intead of bound;
-            leg[i].toPos( Vector(60, 60, offset + 60 /
-            //tanf( TanjentWithBound( roll, i, 0.5 ) ) )
-            tanf(PI / 3 + (errorSum) * powf(-1 , i)) )
-            );
+            z = offset + 60 / tanf(PI / 3 + ( roll  ) * powf(-1 , i));
+            //todo kalman filter for MPU6050
+            //todo compute MPU data without sleep_ms but with delayed toPos function
+
+            leg[i].toPos( Vector(60, 60, z ));
         }
 
-        mpu6050_reset();
-        sleep_ms(150 );
+        mpu.reset();
+        sleep_ms(100 );
     }
+
+
 }
 
-
+double Bounds(double *input, const double min , const double max){
+    if (*input >= max) *input = max;
+    if (*input <= min) *input = min;
+    return *input;
+}
 
