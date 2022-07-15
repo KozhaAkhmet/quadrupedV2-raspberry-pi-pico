@@ -3,16 +3,16 @@
 #include "hardware/i2c.h"
 #include "Matrix.h"
 
-#define times 10
-
+#define updateTimes 10
 static int addr = 0x68;
-Angle sumRawAcceleration;
-Angle sumRawGyroscope;
 
 class MPU6050{
 public:
     int16_t acceleration[3], gyroscope[3],temp;
-    void initMPU();
+    Angle sumRawAcceleration;
+    Angle sumRawGyroscope;
+
+    void initMPU(int gpio1 = 15, int gpio2 = 14);
     double getRollRaw();
     double getPitchRaw();
     void reset();

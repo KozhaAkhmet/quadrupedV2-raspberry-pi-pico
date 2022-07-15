@@ -5,14 +5,14 @@
 #include "hardware/i2c.h"
 #include "hardware/gpio.h"
 
-void MPU6050::initMPU() {
+void MPU6050::initMPU(int gpio1 , int gpio2 ) {
     stdio_init_all();
 
     i2c_init(i2c1, 100 * 1000);
-    gpio_set_function(15, GPIO_FUNC_I2C);
-    gpio_set_function(14, GPIO_FUNC_I2C);
-    gpio_pull_up(15);
-    gpio_pull_up(14);
+    gpio_set_function(gpio1, GPIO_FUNC_I2C);
+    gpio_set_function(gpio2, GPIO_FUNC_I2C);
+    gpio_pull_up(gpio1);
+    gpio_pull_up(gpio2);
 
     reset();
 }
@@ -53,36 +53,36 @@ void MPU6050::calculateAverageAcceleration() {
     sumRawAcceleration.bet = 0;
     sumRawAcceleration.gam = 0;
 
-    for (int i = 0; i < times; ++i)
+    for (int i = 0; i < updateTimes; ++i)
     {
         sumRawAcceleration.al  += acceleration[0];
         sumRawAcceleration.bet += acceleration[1];
         sumRawAcceleration.gam += acceleration[2];
     }
 
-    sumRawAcceleration.al  /= times;
-    sumRawAcceleration.bet /= times;
-    sumRawAcceleration.gam /= times;
+    sumRawAcceleration.al  /= updateTimes;
+    sumRawAcceleration.bet /= updateTimes;
+    sumRawAcceleration.gam /= updateTimes;
 }
 void MPU6050::calculateAverageGyro() {
     sumRawGyroscope.al  = 0;
     sumRawGyroscope.bet = 0;
     sumRawGyroscope.gam = 0;
 
-    for (int i = 0; i < times; ++i)
+    for (int i = 0; i < updateTimes; ++i)
     {
         sumRawGyroscope.al  += gyroscope[0];
         sumRawGyroscope.bet += gyroscope[1];
         sumRawGyroscope.gam += gyroscope[2];
     }
 
-    sumRawGyroscope.al  /= times;
-    sumRawGyroscope.bet /= times;
-    sumRawGyroscope.gam /= times;
+    sumRawGyroscope.al  /= updateTimes;
+    sumRawGyroscope.bet /= updateTimes;
+    sumRawGyroscope.gam /= updateTimes;
 }
 double MPU6050::getRoll(){
-    return atanf( - sumRaw.al  / sqrtf( sumRaw.gam * sumRaw.gam + sumRaw.bet * sumRaw.bet ) );
+    return atanf( - sumRawAcceleration.al  / sqrtf( sumRawAcceleration.gam * sumRawAcceleration.gam + sumRawAcceleration.bet * sumRawAcceleration.bet ) );
 }
 double MPU6050::getPitch(){
-    return atanf( - sumRaw.gam / sqrtf( sumRaw.al * sumRaw.al + sumRaw.bet * sumRaw.bet ) );
+    return atanf( - sumRawAcceleration.gam / sqrtf( sumRawAcceleration.al * sumRawAcceleration.al + sumRawAcceleration.bet * sumRawAcceleration.bet ) );
 }
