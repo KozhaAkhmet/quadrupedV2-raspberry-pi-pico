@@ -3,46 +3,44 @@
 * Quadruped Robot V2 on Raspberry Pi Pico
 *
 */
-#include <stdio.h>
 #include "pico/stdlib.h"
-#include "pico/binary_info.h"
-#include "pico/multicore.h"
-#include "cmath"
-
-
-#include "NRF24.h"
-#include "MPU6050.h"
+#include "iostream"
+#include "Servo.h"
 #include "Motions.h"
-#include "PID.h"
+#include "NRF24.h"
 
-void MPUTest();
+
 
 [[maybe_unused]] void NRFTest();
-double Bounds(double input, double min , double max);
-void Balance();
+float TanjentWithBound(float roll, int i, float bound);
 
 
+float roll = 0, pitch;
 
-void core1(){
-    MPUTest();
-};
+int main()                                                          //Main Function
+{
+    stdio_init_all();
+    sleep_ms(500);
+    //multicore_launch_core1(walkCycle); todo reorganize multicore
 
-int main() {                                                         //Main Function
+    //MPUTest();
+    NRFTest();
+    //defineServo();
 
-    multicore_launch_core1(core1);
 
     while (true) {
         //walk();
         //test();
         //leg[1].slide(80,40,60);
         //walkCycle();
-        //rotationCycle(1)
+        //rotationCycle(1);
         //walkCycle();
-        //rotateBody();
+        //printf("Leg1`s al: %f ,  bet: %f ,  gam: %f  \n", leg[0].lastAng(1), leg[0].lastAng(2), leg[0].lastAng(3));
+        //bodyCircularMotion();
+        //test();
 
     }
 }
-
 
 
 void NRFTest() {
@@ -50,7 +48,7 @@ void NRFTest() {
     NRF24 nrf(spi0, 16, 17);
     nrf.config();
     nrf.modeTX();
-    //todo fix address. Can`t recognize controller address.
+    //TODO fix address. Could`t recognize controller`s address.
     char buffer[32];
     while (1) {
         sprintf(buffer, "60");
@@ -67,108 +65,95 @@ void NRFTest() {
 
     }
 }
-MPU6050 mpu;
-PID pid;
-void MPUTest(){
-    //todo kalman filter for MPU6050
-    mpu.initMPU();
+//
+//void MPUTest(){
+//    //todo merge MPU6050 lib with new roll, pitch calculation functions.
+//    stdio_init_all();
+//
+//    i2c_init(i2c1, 100 * 1000);
+//    gpio_set_function(15, GPIO_FUNC_I2C);
+//    gpio_set_function(14, GPIO_FUNC_I2C);
+//    gpio_pull_up(15);
+//    gpio_pull_up(14);
+//
+//    mpu6050_reset();
+//
+//    int16_t acceleration[3], gyro[3], temp;
+//
+////    defineServo();
+////    defaultPos();
+//
+//    float offset = 20;
+//
+//    double past;
+//    double integral;
+//    double intConst = 0.00001;
+//
+//    double present;
+//    double error;
+//    double errorConst = 0.5;
+//
+//    double future;
+//    double derivative;
+//    double last;
+//    double now;
+//    double derConst = 0.001;
+//
+//
+//    absolute_time_t lastTime;
+//    long double errorSum;
+//    float bound = 0.2;
+//    int skip = 0;
+//
+//    while (1) {
+//
+//        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
+//        pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2])));
+//
+//        error = ( 0 - roll ) ;
+//        present = errorConst * error;
+//
+//        integral += error;
+//        past = intConst * integral;
+//
+//
+//        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
+////        rollAcc = atanf( - gyro[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
+//
+////        derivative = ( last - now ) / (double) absolute_time_diff_us(lastTime,get_absolute_time());
+//        derivative = gyro[0];
+//        future = derConst * derivative;
+//
+//        errorSum = present  ;
+//
+//
+//
+//        mpu6050_read_raw(acceleration, gyro, &temp);
+//        //printf("Acc. X = %6.2d, Y = %6.2d, Z = %6.2d ", acceleration[0], acceleration[1],acceleration[2]);
+//        //printf("Angles. Roll = %6.2f, Pitch = %6.2f\n",roll , pitch);
+//        mpu6050_reset();
+//
+//
+//        printf("Error sum: %.3Lf Future: %.3f Present: %.3f Past: %.3f \n", errorSum , future, present, past );
+////        for (int i = 0; i <= 3; ++i) {
+////            float y = leg[i].lastPos.y,
+////                    z = leg[i].lastPos.z;
+////            //todo use PID intead of bound;
+////            leg[i].toPos( Vector(60, 60, offset + 60 /
+////            //tanf( TanjentWithBound( roll, i, 0.5 ) ) )
+////            tanf(PI / 3 + (errorSum) * powf(-1 , i)) )
+////            );
+////        }
+//        sleep_ms(150 );
+//    }
+//
+//
+//}
+////float TanjentWithBound(float roll, int i , float bound){
+////    float al = PI / 3 + roll * powf(-1 , i);
+////    if(tanf(al) - bound <= tanf(al) && tanf(al) <= tanf(al) + bound )
+////        return tanf(al);
+////}
+//
 
-    int16_t acceleration[3], gyro[3], temp;
-
-    double past;
-    double integral = 0;
-    double intConst = 0.0001;
-
-    double present;
-    double error;
-    double errorConst = 0.05;
-
-    double future;
-    double derivative;
-    double last;
-    double now;
-    double derConst = 0.000003;
-
-
-    absolute_time_t lastTime;
-    long double errorSum;
-    int skip = 0;
-
-    double t = get_absolute_time() , delT = 0.04, al = 0.96 ,
-            gyroAngleX = 0 , gyroAngleY = 0 , gyroAngleZ = 0;
-
-
-    double AngleX ,AngleY ,AngleZ ,x_accel;
-
-
-
-    while (1) {
-        mpu.readRaw(acceleration, gyro, &temp);
-/*
-        gyroAngleX = acceleration[0] /131 * delT + gyroAngleX;
-        gyroAngleY = gyro[1] /131 * delT + gyroAngleY;
-        gyroAngleZ = gyro[2] /131 * delT + gyroAngleZ;
-
-        AngleX = al * gyroAngleX + (1 - al) * acceleration[0];
-        AngleY = al * gyroAngleY + (1 - al) * acceleration[1];
-        AngleZ = gyroAngleZ;
-        roll =  atanf( - acceleration[0] / sqrtf(acceleration[1]*acceleration[1] + acceleration[2]*acceleration[2]));
-        pitch = (atanf( - acceleration[1] / sqrtf(acceleration[0]*acceleration[0] + acceleration[2]*acceleration[2]))) / 180 * PI;
-
-        roll = al * gyroAngleX + (1 - al) * pitch;
-
-        filtered angle
-*/
-/*
-        mpu.calculateAverageAcceleration();
-        mpu.calculateAverageGyro();
-
-        error = ( - mpu.getRoll() ) ;
-        present =  Bounds(errorConst * error , -0.001, 0.001);
-
-        integral += error;
-        past = Bounds(intConst * integral , -0.01, 0.01);
-
-        derivative = gyro[0];
-        future = Bounds( derConst * derivative , -0.1, 0.1);
-
-        errorSum =  future;
-
-        printf("sum: %.3f Future: %.3f Present: %.3f Past: %.3f \n", mpu.getRoll() , future, present, past );
-
-        mpu.reset();
-        */
-        mpu.calculateAverageAcceleration();
-        mpu.calculateAverageGyro();
-
-        pid.setP(0.05      , -0.001 , 0.001);
-        pid.setI(0.0001    , -0.01  , 0.001);
-        pid.setD(0.000003 , -0.1   , 0.1);
-
-        pid.calculatePID(mpu.getRoll(), gyro[0]);
-
-        mpu.reset();
-
-    }
-}
-
-void Balance(){
-
-    float offset = 20;
-    float z;
-
-    defineServo();
-
-    for (int i = 0; i <= 3; ++i) {
-        z = offset + 60 / tanf(PI / 3 + ( mpu.getRoll() + pid.getPID()) * powf(-1 , (float) i));
-        leg[i].toPos( Vector(60, 60, z ));
-    }
-    sleep_ms(100 );
-}
-
-double Bounds(double *input, const double min , const double max){
-    if (*input >= max) *input = max;
-    if (*input <= min) *input = min;
-    return *input;
-}
 

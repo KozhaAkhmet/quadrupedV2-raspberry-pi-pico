@@ -2,7 +2,7 @@
 #define QUADRUPEDV2_LEGCLASS_H
 
 #include "Servo.h"
-#include "Matrix.h"
+#include "Eigen"
 
 #define PI 3.14
 
@@ -11,17 +11,15 @@
 #define J3 33
 
 
-float map(float x, float in_min, float in_max, float out_min, float out_max);
-
 class Leg {                                                        //Creating Leg class and its ingredients
 public:
-    Angle lastAng;
-    Vector lastPos;
+    Eigen::Vector3f lastAng;
+    Eigen::Vector3f lastPos;
     Servo servo[3];
-    void toPos(Vector pos);
-    void toAng(Angle ang);
+    void toPos(Eigen::Vector3f pos);
+    void toAng(Eigen::Vector3f ang);
     void stepCycle(float dis, float omega, float freq);
-    void slide(Vector *targetPos);
+    void slide(Eigen::Vector3f targetPos);
 };
 
 #endif //QUADRUPEDV2_LEGCLASS_H

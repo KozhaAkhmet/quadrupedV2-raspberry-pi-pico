@@ -1,54 +1,47 @@
 #include "LegClass.h"
+
 #include <cmath>
 #include "pico/time.h"
-/**
- * Converts one range to another. Similar to Arduno map function.
- * @param x Variable which range is converting
- * @param in_min Variable min bound.
- * @param in_max  Variable max bound.
- * @param out_min Targeted min bound.
- * @param out_max Targeted max bound.
- * @return Returns variable in targeted bound.
- */
-float map(float x, float in_min, float in_max, float out_min, float out_max)
-{
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
+#include "Mapping.h"
+#include "Eigen"
 
 /**
  * Inverse kinematic (Work but requires Update)
- * @param pos
+ * @param Eigen::Vector3f pos
  */
-void Leg::toPos(Vector pos) {
-    float al, bet, gam, L, L1;
-    L1 = sqrtf(pos.x * pos.x + pos.y * pos.y);
-    L =  sqrtf(pos.z * pos.z + (L1 - J3) * (L1 - J3));
+void Leg::toPos(Eigen::Vector3f pos) {
+    double al, bet, gam;
+    float L, L1;
+    L1 = sqrtf(pos(0) * pos(0) + pos(1) * pos(1));
+    L =  sqrtf(pos(2) * pos(2) + (L1 - J3) * (L1 - J3));
 
-    al =  (float) ((180 * (acosf((J1 * J1 - J2 * J2 - L * L) / (-2 * J2 * L)))) / PI   +   (180 * (acosf(pos.z / L)) / PI));
-    gam = (float) (((180 * (atanf(pos.x / pos.y))) / PI + 45));
-    bet = (float) ((180 * acosf((L * L - J1 * J1 - J2 * J2) / (-2 * J1 * J2))) / PI);
+    al =   ((180 * (acosf((J1 * J1 - J2 * J2 - L * L) / (-2 * J2 * L)))) / PI   +   (180 * (acosf(pos(2) / L)) / PI));
+    gam =  (((180 * (atanf(pos(0) / pos(1)))) / PI + 45));
+    bet =  ((180 * acosf((L * L - J1 * J1 - J2 * J2) / (-2 * J1 * J2))) / PI);
 
-    lastAng.al = al;
-    lastAng.gam = gam;
-    lastAng.bet = bet;
+    lastAng(0) = al;
+    lastAng(1) = gam;
+    lastAng(2) = bet;
+//
+//    lastPos.x = pos(1);
+//    lastPos(2) = pos(2);
+//    lastPos.z = pos(3);
+    printf("%f   %f    %f   %f    %f\n", al, gam, bet, L1, L);
 
-    lastPos.x = pos.x;
-    lastPos.y = pos.y;
-    lastPos.z = pos.z;
+    servo[0].write(map<float>((float )gam,0,180,  servo[0].range[0],  servo[0].range[1]));
+    servo[1].write(map<float>((float )al,0,180,   servo[1].range[0],  servo[1].range[1]));
+    servo[2].write(map<float>((float )bet,0,180,  servo[2].range[0],  servo[2].range[1]));
 
-    servo[0].write(map(gam,0,180,  servo[0].range[0],  servo[0].range[1]));
-    servo[1].write(map(al,0,180,   servo[1].range[0],  servo[1].range[1]));
-    servo[2].write(map(bet,0,180,  servo[2].range[0],  servo[2].range[1]));
 }
 
 /**
  * Forward Kinematics (Work). Applies anges to the Servos.
  * @param ang
  */
-void Leg::toAng(Angle ang){
-    servo[0].write(map(ang.gam,0,180,  servo[0].range[0],  servo[0].range[1]));
-    servo[1].write(map(ang.al,0,180,   servo[1].range[0],  servo[1].range[1]));
-    servo[2].write(map(ang.bet,0,180,  servo[2].range[0],  servo[2].range[1]));
+void Leg::toAng(Eigen::Vector3f ang){
+    servo[0].write(map<float>(ang(0),0,180,  servo[0].range[0],  servo[0].range[1]));
+    servo[1].write(map<float>(ang(1),0,180,   servo[1].range[0],  servo[1].range[1]));
+    servo[2].write(map<float>(ang(2),0,180,  servo[2].range[0],  servo[2].range[1]));
 }
 /**
  * Cycle Function which do circular motion on defined(tmp) position.   (Work)
@@ -58,37 +51,37 @@ void Leg::toAng(Angle ang){
  */
 void Leg::stepCycle(float dis, float dir, float freq){
     //get_absolute_time()
-    Vector tmp(60);
+    Eigen::Vector3f tmp(60,60,60);
     float R = dis/2;
     float sinus = sinf(freq) < 0 ? sinf(freq) : 0 ;
 
     float x = - R * cosf(freq);
     float y = 0;
-    float z = tmp.z + (R*1)*sinus;  //Making a half circle on z axis
+    float z = tmp(2) + (R*1)*sinus;  //Making a half circle on z axis
 
     dir = (float) (dir * PI)/180;       //Converting to radian
 
-    toPos( Vector(x + x*cosf(dir) - y*sinf(dir),  tmp.y + x*sinf(dir) + y*cosf(dir), z));
+    toPos( Eigen:: Vector3f(x + x*cosf(dir) - y*sinf(dir),  tmp(1) + x*sinf(dir) + y*cosf(dir), z));
 }
 
 /**
  * Does slide to input position. (Work but requires update)
- * @param pos
+ * @param Eigen::Vector3f targetPos
  */
-void Leg::slide(Vector *targetPos){
+void Leg::slide(Eigen::Vector3f targetPos){
     for( float flag = 0; flag <= 2*PI ; flag = (float) flag + PI/4){
-        toPos(Vector(40,60,60));
-        float R=sqrtf((pos.x-lastPos.x)*(pos.x-lastPos.x) + (pos.y-lastPos.y)*(pos.y-lastPos.y) + (pos.z-lastPos.z)*(pos.z-lastPos.z))/2;
-        float tmpx = lastPos.x , tmpy =  pos.y, tmpz = lastPos.z, x,y,z;
+        toPos(Eigen::Vector3f (40,60,60));
+        float R=sqrtf((targetPos(0)-lastPos(1))*(targetPos(0)-lastPos(1)) + (targetPos(1)-lastPos(2))*(targetPos(1)-lastPos(2)) + (targetPos(2)-lastPos(3))*(targetPos(2)-lastPos(3)))/2;
+        float tmpx = lastPos(0) , tmpy =  targetPos(1), tmpz = lastPos(2), x,y,z;
         //absolute_time_t time = get_absolute_time();
-        //while(!(lastPos.x + R*cos(millis()/500) == pos.x)){
+        //while(!(lastPos(1) + R*cos(millis()/500) == pos(1))){
         for(float j = PI ; j > -PI ; j = (float) j - 0.5){
             //tmpx + R - R*cos(j)
             //get_absolute_time()
             //
             x = - R*cosf(j);
             y = 0;
-            toPos( Vector(tmpx + x*cosf(flag) - y*sinf(flag),  tmpy + x*sinf(flag) + y*cosf(flag),   tmpz));
+            toPos( Eigen::Vector3f (tmpx + x*cosf(flag) - y*sinf(flag),  tmpy + x*sinf(flag) + y*cosf(flag),   tmpz));
             sleep_ms(100);
         }
         sleep_ms(1000);

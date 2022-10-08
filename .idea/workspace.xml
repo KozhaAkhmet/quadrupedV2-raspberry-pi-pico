@@ -3,6 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -22,10 +25,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="created PID class">
+      <change afterPath="$PROJECT_DIR$/inc/Mapping.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/PID.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/PID.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PID.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PID.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/LegClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/LegClass.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/MPU6050.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/MPU6050.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Matrix.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Motions.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Motions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Servo.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Servo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LegClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LegClass.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MPU6050.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MPU6050.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload.sh" beforeDir="false" afterPath="$PROJECT_DIR$/upload.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Version_2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,6 +105,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QuadrupedV2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="QuadrupedV2" TARGET_NAME="QuadrupedV2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QuadrupedV2" RUN_TARGET_NAME="QuadrupedV2">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -139,6 +155,20 @@
       <workItem from="1657813776249" duration="6991000" />
       <workItem from="1657887266874" duration="3982000" />
       <workItem from="1657892715960" duration="4431000" />
+      <workItem from="1659300852775" duration="1554000" />
+      <workItem from="1660227930627" duration="364000" />
+      <workItem from="1660839561193" duration="789000" />
+      <workItem from="1660840033277" duration="1153000" />
+      <workItem from="1662898612492" duration="16000" />
+      <workItem from="1664022568829" duration="2000" />
+      <workItem from="1664043396817" duration="2398000" />
+      <workItem from="1664049500219" duration="18000" />
+      <workItem from="1664051726882" duration="3242000" />
+      <workItem from="1664731329195" duration="91000" />
+      <workItem from="1665133219920" duration="3800000" />
+      <workItem from="1665148990315" duration="459000" />
+      <workItem from="1665164288233" duration="350000" />
+      <workItem from="1665245451489" duration="7433000" />
     </task>
     <task id="LOCAL-00001" summary="Added Leg class to library.&#10;Code organized.">
       <created>1655393982386</created>
@@ -204,7 +234,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

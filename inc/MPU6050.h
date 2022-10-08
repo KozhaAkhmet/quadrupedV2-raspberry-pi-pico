@@ -1,7 +1,7 @@
 #ifndef QUADRUPEDV2__MPU6050_H_
 #define QUADRUPEDV2__MPU6050_H_
 #include "hardware/i2c.h"
-#include "Matrix.h"
+#include "Eigen"
 
 #define updateTimes 10
 static int addr = 0x68;
@@ -9,10 +9,10 @@ static int addr = 0x68;
 class MPU6050{
 public:
     int16_t acceleration[3], gyroscope[3],temp;
-    Angle sumRawAcceleration;
-    Angle sumRawGyroscope;
+    Eigen::Vector3f sumRawAcceleration;
+    Eigen::Vector3f sumRawGyroscope;
 
-    void initMPU(int gpio1 = 15, int gpio2 = 14);
+    static void initMPU(int gpio1 = 15, int gpio2 = 14);
     double getRollRaw();
     double getPitchRaw();
     void reset();

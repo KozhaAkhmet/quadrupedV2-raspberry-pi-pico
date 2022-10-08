@@ -1,6 +1,8 @@
 #ifndef QUADRUPEDV2__MYSERVO_H_
 #define QUADRUPEDV2__MYSERVO_H_
 
+#pragma once
+
 struct Servo{                                                  //Defining Servo class
     public:
     int servoPin;
