@@ -24,8 +24,8 @@ int main()                                                          //Main Funct
     //multicore_launch_core1(walkCycle); todo reorganize multicore
 
     //MPUTest();
-    NRFTest();
-    //defineServo();
+    //NRFTest();
+    defineServo();
 
 
     while (true) {
@@ -37,7 +37,7 @@ int main()                                                          //Main Funct
         //walkCycle();
         //printf("Leg1`s al: %f ,  bet: %f ,  gam: %f  \n", leg[0].lastAng(1), leg[0].lastAng(2), leg[0].lastAng(3));
         //bodyCircularMotion();
-        //test();
+        test();
 
     }
 }
@@ -45,7 +45,7 @@ int main()                                                          //Main Funct
 
 void NRFTest() {
     uint8_t addr[6] = "Node1";
-    NRF24 nrf(spi0, 16, 17);
+    NRF24 nrf(spi0, 17, 18);
     nrf.config();
     nrf.modeTX();
     //TODO fix address. Could`t recognize controller`s address.
@@ -55,13 +55,13 @@ void NRFTest() {
         buffer[30] = 'R';
         buffer[31] = 'O'; // not a zero.
         nrf.sendMessage(buffer);
-        sleep_ms(1000);
+        sleep_ms(10);
 
-        sprintf(buffer, "-60");
-        buffer[30] = 'R';
-        buffer[31] = 'O'; // not a zero.
-        nrf.sendMessage(buffer);
-        sleep_ms(1000);
+//        sprintf(buffer, "-60");
+//        buffer[30] = 'R';
+//        buffer[31] = 'O'; // not a zero.
+//        nrf.sendMessage(buffer);
+//        sleep_ms(300);
 
     }
 }

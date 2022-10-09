@@ -59,7 +59,7 @@ void Leg::stepCycle(float dis, float dir, float freq){
     float y = 0;
     float z = tmp(2) + (R*1)*sinus;  //Making a half circle on z axis
 
-    dir = (float) (dir * PI)/180;       //Converting to radian
+    dir = (dir * PI)/180;       //Converting to radian
 
     toPos( Eigen:: Vector3f(x + x*cosf(dir) - y*sinf(dir),  tmp(1) + x*sinf(dir) + y*cosf(dir), z));
 }

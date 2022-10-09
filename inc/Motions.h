@@ -47,10 +47,10 @@ void resetPos() {                                                 //Default leg 
 }
 
 void moveBody(Eigen::Vector3f pos) {                       //Body displacement
-    leg[0].toPos(Eigen::Vector3f( + pos(1), 40 - pos(2), pos(3)));
-    leg[1].toPos( Eigen::Vector3f( - pos(1), 40 - pos(2), pos(3)));
-    leg[2].toPos(Eigen::Vector3f( + pos(1), 40 + pos(2), pos(3)));
-    leg[3].toPos(Eigen::Vector3f( - pos(1), 40 + pos(2), pos(3)));
+    leg[0].toPos(Eigen::Vector3f( + pos(0), 40 - pos(1), pos(2)));
+    leg[1].toPos( Eigen::Vector3f( - pos(0), 40 - pos(1), pos(2)));
+    leg[2].toPos(Eigen::Vector3f( + pos(0), 40 + pos(1), pos(2)));
+    leg[3].toPos(Eigen::Vector3f( - pos(0), 40 + pos(1), pos(2)));
 }
 /*
 void walk() {                                                       //Manuel Walking gait (On Procsess..)
@@ -95,19 +95,19 @@ void test(){
         for(j=40 ; j<80 ; (int) j++){
             def(2) = j;
             leg[i].toPos(def);
-            // sleep_ms(50);
+             sleep_ms(50);
         }
     for( i=0 ; i<4 ; i++)
         for(j=80 ; j>40 ; (int) j--){
             def(2) = j;
             leg[i].toPos(def);
-            //sleep_ms(50);
+            sleep_ms(50);
         }
     for( i=0 ; i<4 ; i++)
         for(j=40 ; j<80 ; (int) j++){
             def(2) = j;
             leg[i].toPos(def);
-            //sleep_ms(50);
+            sleep_ms(50);
         }
     for(j=80 ; j>40 ; (int) j--){
         def(2) = j;
@@ -115,13 +115,13 @@ void test(){
         leg[1].toPos(def);
         leg[2].toPos(def);
         leg[3].toPos(def);
-        // sleep_ms(50);
+        sleep_ms(50);
     }
     float freq=0 ;
     while( freq < (2*PI) ){
         moveBody(Eigen::Vector3f (20*sinf(freq),0,60));
         freq = freq + 0.1f ;
-        //sleep_ms(50);
+        sleep_ms(50);
     }
 }
 
@@ -135,10 +135,10 @@ void rotateBody(){
 }
 
 void walkCycle(){
-    float freq = 0,angle = 0;
+    float freq = 0,angle = 90;
 
     while( freq > - 2*PI ){
-        leg[0].stepCycle( 70 ,   angle + 90   , freq     );
+        leg[0].stepCycle( 70 ,   angle  + 90  , freq     );
         leg[1].stepCycle( 70 , - angle + 90   , (float )(freq + PI));
         leg[2].stepCycle( 70 , - angle - 90   , (float )(freq + PI));
         leg[3].stepCycle( 70 ,   angle + 270  , freq     );

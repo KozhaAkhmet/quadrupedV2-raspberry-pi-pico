@@ -61,7 +61,7 @@ void NRF24::config(){
 
     writeReg(1,0); // no ack.
 
-    writeReg(5, 0101); // channel.
+    writeReg(5, 60); // channel.
 
     writeReg(0x0a, (uint8_t*)"gyroc",5);
     writeReg(0x10, (uint8_t*)"gyroc",5);
