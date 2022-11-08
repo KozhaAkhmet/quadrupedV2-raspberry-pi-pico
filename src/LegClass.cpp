@@ -60,7 +60,7 @@ void Leg::stepCycle(float dis, float dir, float freq){
     float z = tmp(2) + (R*1)*sinus;  //Making a half circle on z axis
 
     dir = (dir * PI)/180;       //Converting to radian
-
+    //TODO Rewrite rotation mutiplicaytion code by using eigen library.
     toPos( Eigen:: Vector3f(x + x*cosf(dir) - y*sinf(dir),  tmp(1) + x*sinf(dir) + y*cosf(dir), z));
 }
 

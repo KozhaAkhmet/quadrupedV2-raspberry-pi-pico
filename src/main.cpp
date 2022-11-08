@@ -48,7 +48,7 @@ void NRFTest() {
     NRF24 nrf(spi0, 17, 18);
     nrf.config();
     nrf.modeTX();
-    //TODO fix address. Could`t recognize controller`s address.
+    //TODO Could`t recognize controller`s address.
     char buffer[32];
     while (1) {
         sprintf(buffer, "60");

@@ -20,6 +20,7 @@ add_executable(QuadrupedV2
         src/MPU6050.cpp
         src/LegClass.cpp
         src/NRF24.cpp
+        src/PID.cpp
         )
 
 pico_set_program_name(QuadrupedV2 "QuadrupedV2")

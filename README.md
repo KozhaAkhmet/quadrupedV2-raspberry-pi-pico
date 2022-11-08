@@ -12,7 +12,7 @@ This project have [the older version with Arduino](https://github.com/KozhaAkhme
 
 I had been started with Arduino but at that time it began to get slower. Then I started to search for new, much faster hardware.Then I find Raspberry Pi Pico Which is much faster than arduino.I will mention only main parts,but you can check the differences in [this site](https://robu.in/raspberry-pi-pico-vs-arduino-which-to-choose/) . Arduino IDE and It`s libraries are very user friendly also same thing we can say to Thonny IDE, which is used for the pico but It only works with Micropython. Rapsberry pi Pico is also can programmed in C++ but it requires a work.
 
-**In Conclusion I use :**
+**In Conclusion, I use :**
 
 | Name                   | Count       |  Used For As  |
 | -----------            | ----------- | ------------  |
