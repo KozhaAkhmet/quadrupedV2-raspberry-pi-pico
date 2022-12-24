@@ -19,14 +19,14 @@ void Leg::toPos(Eigen::Vector3f pos) {
     gam =  (((180 * (atanf(pos(0) / pos(1)))) / PI + 45));
     bet =  ((180 * acosf((L * L - J1 * J1 - J2 * J2) / (-2 * J1 * J2))) / PI);
 
-    lastAng(0) = al;
-    lastAng(1) = gam;
-    lastAng(2) = bet;
+    //lastAng(0) = al;
+    //lastAng(1) = gam;
+    //lastAng(2) = bet;
 //
 //    lastPos.x = pos(1);
 //    lastPos(2) = pos(2);
 //    lastPos.z = pos(3);
-    printf("%f   %f    %f   %f    %f\n", al, gam, bet, L1, L);
+    //printf("%f   %f    %f   %f    %f\n", al, gam, bet, L1, L);
 
     servo[0].write(map<float>((float )gam,0,180,  servo[0].range[0],  servo[0].range[1]));
     servo[1].write(map<float>((float )al,0,180,   servo[1].range[0],  servo[1].range[1]));
@@ -46,22 +46,37 @@ void Leg::toAng(Eigen::Vector3f ang){
 /**
  * Cycle Function which do circular motion on defined(tmp) position.   (Work)
  * @param dis Step distance in mm.
- * @param dir Direction if the Cycle in angles.
- * @param freq Cycle update rate.
+ * @param dir Direction of the cycle.
+ * @param angle Current angle of the cycle.
  */
-void Leg::stepCycle(float dis, float dir, float freq){
-    //get_absolute_time()
-    Eigen::Vector3f tmp(60,60,60);
-    float R = dis/2;
-    float sinus = sinf(freq) < 0 ? sinf(freq) : 0 ;
+bool Leg::stepCycle(float direction, float stepLength, float angle){
+    // Checking if angle is reached ground or simply done its step by doing 180 degree step.
+    if(angle >= PI)
+        return true;
 
-    float x = - R * cosf(freq);
-    float y = 0;
-    float z = tmp(2) + (R*1)*sinus;  //Making a half circle on z axis
+    //direction is in radian for better calculation
+    //tmp is initial reference coordinate or simply translation of function
 
-    dir = (dir * PI)/180;       //Converting to radian
-    //TODO Rewrite rotation mutiplicaytion code by using eigen library.
-    toPos( Eigen:: Vector3f(x + x*cosf(dir) - y*sinf(dir),  tmp(1) + x*sinf(dir) + y*cosf(dir), z));
+    Eigen::Vector3f translation(60,60,60);
+
+    float radius = stepLength/2;
+
+    Eigen::Vector3f functionVec( -radius * cosf(-angle),
+                                 0,
+                                 radius * sinf(-angle)
+                                );
+
+    //uncomment if you use direction as angle. This converts direction to radian.
+    //direction = (direction * PI)/180;
+
+    Eigen::Matrix3f rotationMatrix;
+    rotationMatrix<< cosf(direction), sinf(direction),
+                     0,
+                    -sinf(direction), cosf(direction
+                     );
+
+    toPos(  translation + rotationMatrix * functionVec);
+    return false;
 }
 
 /**
@@ -87,4 +102,31 @@ void Leg::slide(Eigen::Vector3f targetPos){
         sleep_ms(1000);
     }
 }
+// Old stepCycle with eigen library
+/*
+bool Leg::stepCycle(float stepLength, float direction, float freq){
+    //direction is in radian for better calculation
+    //tmp is initial reference coordinate
+    Vector Eigen::Vector3f tmp(60,60,60);
+
+    float radius = stepLength/2;
+    float sinus = sinf(freq) < 0 ? sinf(freq) : 0;
+
+    float x = -radius * cosf(freq);
+    float y = 0;
+    float z = tmp.z + (radius*i) * sinus;
+
+    //uncomment if you use direction as angle. This converts direction to radian.
+    //direction = (direction * PI)/180;
+
+    toPos(Eigen:: Vector3f(x + x*cosf(direction) - y*sinf(direction),
+                           tmp(1) + x*sinf(direction) + y*cosf(direction),
+                           z
+                           ));
+    return true;
+}
+*/
+
+
+
 

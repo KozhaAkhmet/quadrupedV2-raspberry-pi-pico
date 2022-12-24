@@ -4,18 +4,98 @@
 *
 */
 #include "pico/stdlib.h"
-#include "iostream"
+//#include "iostream"
 #include "Servo.h"
 #include "Motions.h"
-#include "NRF24.h"
+//#include "NRF24.h"
+
+void CreepingGait(float direction, float stepLength) {
+
+    enum State {
+        first,
+        second,
+        third,
+        fourth
+    };
+    enum State current = first;
+    bool isFinished = false;
+    float freq = 0;
+    float dist = 30.0;
+    while (true) {
+        switch (current) {
+            case (first) :
+                isFinished = leg[2].stepCycle(-direction, stepLength, freq);
+                moveBody(Eigen::Vector3f(dist, -dist, 60));
+                break;
+            case (second):
+                isFinished = leg[3].stepCycle(-direction, stepLength, freq);
+                moveBody(Eigen::Vector3f(-dist, -dist, 60));
+                break;
+            case (third):
+                isFinished = leg[0].stepCycle(direction, stepLength, freq);
+                moveBody(Eigen::Vector3f(dist, dist, 60));
+                break;
+            case (fourth):
+                isFinished = leg[1].stepCycle(direction, stepLength, freq);
+                moveBody(Eigen::Vector3f(-dist, dist, 60));
+                break;
+        }
+
+        if (isFinished) {
+            if (current != fourth){
+                current = (State) (current + 1);
+            } else{
+                current = first;
+            }
+            freq = 0;
+        }
+        freq += 0.1;
+        sleep_ms(100);
+    }
+}
+void LizardWalk(float direction, float stepLength){
+
+    enum State {
+        first,
+        second,
+    };
+    enum State current = first;
+    bool isFinished1 = false;
+    bool isFinished2 = false;
+    bool isFinishedAll = false;
+    float freq = 0;
+    float dist = 10.0;
+    while (true) {
+        switch (current) {
+            case (first) :
+                isFinished1 = leg[0].stepCycle(-direction, stepLength, freq);
+                isFinished2 = leg[3].stepCycle(-direction, stepLength, freq);
+                isFinishedAll = isFinished1 && isFinished2;
+                break;
+            case (second):
+                isFinished1 = leg[1].stepCycle(direction, stepLength, freq);
+                isFinished2 = leg[2].stepCycle(-direction, stepLength, freq);
+                isFinishedAll = isFinished1 && isFinished2;
+                break;
+        }
+
+        if (isFinishedAll) {
+            if (current == second) return;
+            current = (State) (current + 1);
+            freq = 0;
+        }
+        freq += 0.1;
+        sleep_ms(100);
+    }
+}
 
 
+//[[maybe_unused]] void NRFTest();
 
-[[maybe_unused]] void NRFTest();
-float TanjentWithBound(float roll, int i, float bound);
+//float TanjentWithBound(float roll, int i, float bound);
 
 
-float roll = 0, pitch;
+//float roll = 0, pitch;
 
 int main()                                                          //Main Function
 {
@@ -27,8 +107,9 @@ int main()                                                          //Main Funct
     //NRFTest();
     defineServo();
 
-
-    while (true) {
+    float direction = PI / 2;
+    float stepLength = 100;
+    //while (true) {
         //walk();
         //test();
         //leg[1].slide(80,40,60);
@@ -37,12 +118,14 @@ int main()                                                          //Main Funct
         //walkCycle();
         //printf("Leg1`s al: %f ,  bet: %f ,  gam: %f  \n", leg[0].lastAng(1), leg[0].lastAng(2), leg[0].lastAng(3));
         //bodyCircularMotion();
-        test();
+        //test();
 
-    }
+        CreepingGait(direction, stepLength);
+        //LizardWalk(direction, stepLength);
+    //}
 }
 
-
+/*
 void NRFTest() {
     uint8_t addr[6] = "Node1";
     NRF24 nrf(spi0, 17, 18);
@@ -64,7 +147,7 @@ void NRFTest() {
 //        sleep_ms(300);
 
     }
-}
+}*/
 //
 //void MPUTest(){
 //    //todo merge MPU6050 lib with new roll, pitch calculation functions.

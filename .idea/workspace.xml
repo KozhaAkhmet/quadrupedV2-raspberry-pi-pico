@@ -25,11 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff40ea1-2384-4969-ae6a-3ac6d0d54d16" name="Changes" comment="created PID class">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/LegClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/LegClass.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Motions.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Motions.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LegClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LegClass.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$USER_HOME$/pico/pico-sdk/src/common/pico_base/include/pico/types.h" beforeDir="false" afterPath="$USER_HOME$/pico/pico-sdk/src/common/pico_base/include/pico/types.h" afterDir="false" />
+      <change beforePath="$USER_HOME$/pico/pico-sdk/src/common/pico_time/include/pico/time.h" beforeDir="false" afterPath="$USER_HOME$/pico/pico-sdk/src/common/pico_time/include/pico/time.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +91,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "structure.view.defaults.are.configured": "true"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -162,6 +166,18 @@
       <workItem from="1665874628247" duration="221000" />
       <workItem from="1667066222217" duration="42000" />
       <workItem from="1667583285134" duration="291000" />
+      <workItem from="1669540880340" duration="1000" />
+      <workItem from="1670617034436" duration="24000" />
+      <workItem from="1670617059199" duration="36000" />
+      <workItem from="1670617110236" duration="4153000" />
+      <workItem from="1670749015478" duration="4697000" />
+      <workItem from="1670826640133" duration="171000" />
+      <workItem from="1671207235617" duration="90000" />
+      <workItem from="1671731217936" duration="1040000" />
+      <workItem from="1671821579295" duration="11000" />
+      <workItem from="1671892600724" duration="4567000" />
+      <workItem from="1671907407290" duration="11000" />
+      <workItem from="1671915122041" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Added Leg class to library.&#10;Code organized.">
       <created>1655393982386</created>

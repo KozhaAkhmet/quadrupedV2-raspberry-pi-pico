@@ -18,7 +18,7 @@ public:
     Servo servo[3];
     void toPos(Eigen::Vector3f pos);
     void toAng(Eigen::Vector3f ang);
-    void stepCycle(float dis, float omega, float freq);
+    bool stepCycle(float direction, float stepLength, float freq);
     void slide(Eigen::Vector3f targetPos);
 };
 
