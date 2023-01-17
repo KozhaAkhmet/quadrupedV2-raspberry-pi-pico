@@ -16,10 +16,10 @@ public:
     Eigen::Vector3f lastAng;
     Eigen::Vector3f lastPos;
     Servo servo[3];
-    void toPos(Eigen::Vector3f pos);
-    void toAng(Eigen::Vector3f ang);
+    void toPos(Eigen::Vector3f* pos);
+    void toAng(Eigen::Vector3f* ang);
     bool stepCycle(float direction, float stepLength, float freq);
-    void slide(Eigen::Vector3f targetPos);
+    void slide(Eigen::Vector3f* targetPos);
 };
 
 #endif //QUADRUPEDV2_LEGCLASS_H

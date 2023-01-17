@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-set(PICO_SDK_PATH "~/pico/pico-sdk")
+set(PICO_SDK_PATH "~/pico-sdk")
 
 include(pico_sdk_import.cmake)
 
@@ -31,7 +31,7 @@ pico_enable_stdio_usb(QuadrupedV2 1)
 
 target_include_directories(QuadrupedV2 PUBLIC
         inc/
-        /home/sk8/eigen-git-mirror/Eigen
+        /usr/local/include/eigen3/Eigen
         )
 
 target_link_libraries(QuadrupedV2
