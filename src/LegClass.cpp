@@ -75,7 +75,8 @@ void Leg::stepCycle(float dis, float dir, float freq){
  * Does slide to input position. (Work but requires update)
  * @param pos
  */
-void Leg::slide(Vector *targetPos){
+/*
+void Leg::slide(Vector lastPos){
     for( float flag = 0; flag <= 2*PI ; flag = (float) flag + PI/4){
         toPos(Vector(40,60,60));
         float R=sqrtf((pos.x-lastPos.x)*(pos.x-lastPos.x) + (pos.y-lastPos.y)*(pos.y-lastPos.y) + (pos.z-lastPos.z)*(pos.z-lastPos.z))/2;
@@ -94,4 +95,5 @@ void Leg::slide(Vector *targetPos){
         sleep_ms(1000);
     }
 }
+*/
 

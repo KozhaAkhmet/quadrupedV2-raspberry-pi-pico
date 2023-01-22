@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-set(PICO_SDK_PATH "~/pico/pico-sdk")
+set(PICO_SDK_PATH "~/pico-sdk")
 
 include(pico_sdk_import.cmake)
 
@@ -19,7 +19,6 @@ add_executable(QuadrupedV2
         src/Servo.cpp
         src/MPU6050.cpp
         src/LegClass.cpp
-        src/PID.cpp
         )
 
 pico_set_program_name(QuadrupedV2 "QuadrupedV2")

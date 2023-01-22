@@ -12,7 +12,7 @@ public:
     Angle sumRawAcceleration;
     Angle sumRawGyroscope;
 
-    void initMPU(int gpio1 = 15, int gpio2 = 14);
+    void initMPU(int gpio1 = 14, int gpio2 = 15);
     double getRollRaw();
     double getPitchRaw();
     void reset();
