@@ -1,5 +1,5 @@
 # Quadruped Robot on Raspberry Pi Pico
-## *Currently this project is on development...*
+## *I decided to archive this repository to start from a new perspective. If you interested in something you can always contact me kozha.akhmt@gmail.com*
 #
 # **Hardware**
 This project have [the older version with Arduino](https://github.com/KozhaAkhmet/Quadruped_On_Arduino). I was maded that Robot for research and make fun).
